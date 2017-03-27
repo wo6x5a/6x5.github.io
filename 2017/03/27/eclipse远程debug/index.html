@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="6X5" />
+  <meta name="keywords" content="eclipse," />
 
 
 
@@ -87,19 +87,34 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="远程Debug(Jboss-eap-6.2为例):
+服务器:
+..\bin\standalone.conf
+#JAVA_OPTS=”$JAVA_OPTS -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n”
+打开注释
+eclipse:
+右键项目-&amp;gt;debug as-&amp;gt;debug configuration">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://wo6x5a.github.io/2017/03/24/hello-world/index.html">
+<meta property="og:title" content="eclipse远程debug">
+<meta property="og:url" content="https://wo6x5a.github.io/2017/03/27/eclipse远程debug/index.html">
 <meta property="og:site_name" content="6x5">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2017-03-23T02:43:13.418Z">
+<meta property="og:description" content="远程Debug(Jboss-eap-6.2为例):
+服务器:
+..\bin\standalone.conf
+#JAVA_OPTS=”$JAVA_OPTS -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n”
+打开注释
+eclipse:
+右键项目-&amp;gt;debug as-&amp;gt;debug configuration">
+<meta property="og:updated_time" content="2017-03-27T07:17:25.621Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="eclipse远程debug">
+<meta name="twitter:description" content="远程Debug(Jboss-eap-6.2为例):
+服务器:
+..\bin\standalone.conf
+#JAVA_OPTS=”$JAVA_OPTS -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n”
+打开注释
+eclipse:
+右键项目-&amp;gt;debug as-&amp;gt;debug configuration">
 
 
 
@@ -127,13 +142,13 @@ Quick">
 
 
 
-  <link rel="canonical" href="https://wo6x5a.github.io/2017/03/24/hello-world/"/>
+  <link rel="canonical" href="https://wo6x5a.github.io/2017/03/27/eclipse远程debug/"/>
 
 
 
 
 
-  <title> Hello World | 6x5 </title>
+  <title> eclipse远程debug | 6x5 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -314,7 +329,7 @@ Quick">
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wo6x5a.github.io/2017/03/24/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://wo6x5a.github.io/2017/03/27/eclipse远程debug/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="6x5">
@@ -335,7 +350,7 @@ Quick">
             
             
               
-                Hello World
+                eclipse远程debug
               
             
           </h1>
@@ -350,8 +365,8 @@ Quick">
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-24T13:29:50+08:00">
-                2017-03-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T15:11:43+08:00">
+                2017-03-27
               </time>
             
 
@@ -361,6 +376,28 @@ Quick">
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术博客/" itemprop="url" rel="index">
+                    <span itemprop="name">技术博客</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -369,7 +406,7 @@ Quick">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/03/24/hello-world/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/03/27/eclipse远程debug/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -378,7 +415,7 @@ Quick">
 
           
           
-             <span id="/2017/03/24/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="/2017/03/27/eclipse远程debug/" class="leancloud_visitors" data-flag-title="eclipse远程debug">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -407,15 +444,18 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>远程Debug(Jboss-eap-6.2为例):</p>
+<p>服务器:</p>
+<p>..\bin\standalone.conf</p>
+<p>#JAVA_OPTS=”$JAVA_OPTS -agentlib:jdwp=transport=dt_socket,address=8787,server=y,suspend=n”</p>
+<p>打开注释</p>
+<p>eclipse:</p>
+<p>右键项目-&gt;debug as-&gt;debug configuration-&gt;remote java application</p>
+<p>host:服务器IP</p>
+<p>port:8787(可以自己改跟address=xxxx,一样)</p>
+<p>注意,</p>
+<p>同时只能一个用户远程debug.否则会报错.</p>
+<p>远程服务器部署的代码跟本地要一样.</p>
 
       
     </div>
@@ -437,11 +477,33 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/eclipse/" rel="tag"># eclipse</a>
+          
+        </div>
+      
 
       
         
       
 
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/27/grunt安装和使用/" rel="prev" title="grunt安装和使用">
+                grunt安装和使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
@@ -493,17 +555,8 @@ Quick">
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -518,14 +571,28 @@ Quick">
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
           
 
         </nav>
@@ -567,22 +634,6 @@ Quick">
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
