@@ -3,6 +3,13 @@
   
     
     <entry>
+      <title><![CDATA[linux下项目环境搭建部署]]></title>
+      <url>%2F2017%2F03%2F29%2Flinux%E4%B8%8B%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E9%83%A8%E7%BD%B2%2F</url>
+      <content type="text"><![CDATA[centos7安装 不做展示,自行解决 数据库安装: 1yum install mariadb mariadb-server 启动mariadb服务程序并添加到开机启动项中： 12[root@linuxprobe ~]# systemctl start mariadb[root@linuxprobe ~]# systemctl enable mariadb 为了保证数据库的安全性，一定要进行初始化工作： 第1步：设定root用户密码。第2步：删除匿名帐号。第3步：禁止root用户从远程登陆。第4步：删除test数据库并取消对其的访问权限。第5步：刷新授权表，让初始化后的设定立即生效。 1234567891011121314151617[root@linuxprobe ~]# mysql_secure_installationEnter current password for root (enter for none): 当前数据库密码为空，直接敲击回车。Set root password? [Y/n] yNew password: 输入要为root用户设置的数据库密码。Re-enter new password: 重复再输入一次密码。Password updated successfully!Remove anonymous users? [Y/n] y（删除匿名帐号） ... Success!Disallow root login remotely? [Y/n] y(禁止root用户从远程登陆) ... Success!Remove test database and access to it? [Y/n] y(删除test数据库并取消对其的访问权限) - Dropping test database... ... Success! - Removing privileges on test database... ... Success!Reload privilege tables now? [Y/n] y(刷新授权表，让初始化后的设定立即生效) ... Success! 设置防火墙对数据库服务的允许策略： 1234[root@linuxprobe ~]# firewall-cmd --permanent --add-service=mysqlsuccess[root@linuxprobe ~]# firewall-cmd --reloadsuccess 使用root用户登陆到数据库中： 123[root@linuxprobe ~]# mysql -u root -pEnter password: 此处输入root用户在数据库中的密码。Welcome to the MariaDB monitor. Commands end with ; or \g. 创建一个新的数据库用户： 创建数据库用户的命令:CREATE USER 用户名@主机名 IDENTIFIED BY ‘密码’; 12MariaDB [(none)]&gt; create user &apos;herakles&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;Query OK, 0 rows affected (0.00 sec) ‘%’允许远程登陆此用户 给予herakles用户对user表单的查询、更新、删除、插入权限：12MariaDB [mysql]&gt; GRANT SELECT,UPDATE,DELETE,INSERT on mysql.user to luke@localhost;Query OK, 0 rows affected (0.00 sec) redis 安装必要包 1yum install gcc 安装redis 123456#下载wget http://download.redis.io/releases/redis-3.0.0.tar.gztar zxvf redis-3.0.0.tar.gzcd redis-3.0.0#如果不加参数,linux下会报错make MALLOC=libc 启动 1234#启动redissrc/redis-server &amp;#关闭redissrc/redis-cli shutdown 测试 123456$ src/redis-cli127.0.0.1:6379&gt; set foo barOK127.0.0.1:6379&gt; get foo&quot;bar&quot;$ MongoDB 1yum install -y mongodb-org 12345678910mongodb服务使用#启动service mongod start#停止service mongod stop#重启service mongod restart#增加开机启动chkconfig mongod on 未完待续…]]></content>
+    </entry>
+
+    
+    <entry>
       <title><![CDATA[常用工具]]></title>
       <url>%2F2017%2F03%2F28%2F%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7%2F</url>
       <content type="text"><![CDATA[远程连接服务器: winscp/putty/Xshell ftp: Xftp mongodbGUI: Robomongo 编辑器: notepad++, vim 接口调试: postman 监控分析: BTrace]]></content>
