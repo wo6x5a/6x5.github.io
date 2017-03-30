@@ -2,7 +2,7 @@
 title: Linux日常记录
 date: 2017-03-27 17:37:05
 tags: linux
-categories: 有关技术
+categories: 备忘
 ---
 
 - linux开机启动服务目录:/etc/init.d

@@ -2,7 +2,7 @@
 title: java 线程池的使用
 date: 2017-03-27 17:25:25
 tags: [java,线程池]
-categories: 有关技术
+categories: 技术
 ---
 ```java
 import java.util.concurrent.ArrayBlockingQueue;

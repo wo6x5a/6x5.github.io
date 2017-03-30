@@ -2,7 +2,7 @@
 title: 对象拷贝类PropertyUtils，BeanUtils，BeanCopier
 date: 2017-03-27 15:42:15
 tags: [java,反射]
-categories: 有关技术
+categories: 技术
 ---
 ### 目前流行的较为公用认可的工具类：
 

@@ -2,7 +2,7 @@
 title: java内存溢出总结
 date: 2017-03-27 17:06:24
 tags: java
-categories: 有关技术
+categories: 技术
 ---
 首先我们来说说java虚拟机的构成吧:
 

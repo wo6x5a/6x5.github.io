@@ -2,7 +2,7 @@
 title: spring事务的隔离级别和传播属性
 date: 2017-03-27 16:08:25
 tags: [java,spring,事务]
-categories: 有关技术
+categories: 技术
 ---
 ## 前言
 
