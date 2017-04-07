@@ -14,7 +14,7 @@ keywords: "6X5"
 rss:
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2017
 
 # icon between year and author @Footer
 authoricon: heart
@@ -132,9 +132,34 @@ font:
 # Social Links
 # Key is the link label showing to end users.
 # Value is the target link (E.g. GitHub: https://github.com/iissnan)
-#social:
+social:
   #LinkLabel: Link
 
+  GitHub: "https://github.com/wo6x5a"
+  OSC: "https://my.oschina.net/chenwulou"
+  Email: "mailto:wo6x5a@gmail.com"
+  #V2EX: "#"
+  #知乎: "zhihu"
+  #豆瓣: "douban"
+  #简书: "jianshu"
+  #SegmentFault: ""
+  #网易云音乐: "netease"
+  #虾米音乐: "xiami"
+  #Facebook: "#"
+  #Google: "#"
+  #Twitter: "#"
+  #LinkedIn: "#"
+  #QQ: "724621812"
+  #微信: "Wechat"
+  #PayPal: "#"
+  #StackOverflow: "#"
+  #Instagram: "#"
+  #Flickr: "#"
+  #reddit: ""
+  #Medium: ""
+  #TiddlyWiki: ""
+  #Tumblr: ""
+  #_500px: ""
 
 # Social Links Icons
 # Icon Mapping:
@@ -148,6 +173,8 @@ social_icons:
   GitHub: github
   Twitter: twitter
   Weibo: weibo
+  Email: envelope-o
+  QQ: qq
 
 
 # Sidebar Avatar

@@ -73,11 +73,6 @@ deploy:
   repository: git@github.com:wo6x5a/wo6x5a.github.io.git
 
 # Social links 站点
-social:
-  GitHub: https://github.com/wo6x5a
-  osc: https://my.oschina.net/chenwulou
- 
-since: 2017
 
 #搜索
 search:
