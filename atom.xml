@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wo6x5a.github.io/"/>
-  <updated>2017-04-01T08:55:25.553Z</updated>
+  <updated>2017-04-11T02:38:57.029Z</updated>
   <id>https://wo6x5a.github.io/</id>
   
   <author>
@@ -20,37 +20,40 @@
     <link href="https://wo6x5a.github.io/2017/04/01/%E7%BC%96%E7%A0%81%E6%95%A3%E8%AE%B0/"/>
     <id>https://wo6x5a.github.io/2017/04/01/编码散记/</id>
     <published>2017-04-01T08:14:23.000Z</published>
-    <updated>2017-04-01T08:55:25.553Z</updated>
+    <updated>2017-04-11T02:38:57.029Z</updated>
     
     <content type="html"><![CDATA[<h2 id="开发习惯"><a href="#开发习惯" class="headerlink" title="开发习惯"></a>开发习惯</h2><ul>
-<li>合理规范注释,前人编码注释清晰了,后人改动思路就明了了.还有就是命名的规范(代码改动,更新注释).</li>
+<li>合理规范注释, 前人编码注释清晰了, 后人改动思路就明了了.还有就是命名的规范(代码改动,更新注释).</li>
 <li>如果if(){}else if(){}…..&gt;=3 个if, 个人觉得,用switch case 比较好.</li>
-<li>controller层 ,不要放有关业务的代码.业务代码放service层.</li>
-<li>controller层是前台和后台交互的.接口单一职责.一个接口一个功能(如果是在controller层进行权限控制的话,能更好的进行权限控制).尽量清晰.不过service层可以提高代码复用率.</li>
-<li>生产代码禁止以System及Throwable.printStackTrace的方式输出日志信息，必须用Logger替代。注意log等级</li>
-<li>有些功能尽量使用java官方工具类.不要自己写,比如StringUtils,CollectionUtils,Arrays等</li>
-<li>guava,程序员的好朋友</li>
+<li>controller层, 不要放有关业务的代码.业务代码放service层.</li>
+<li>controller层是前台和后台交互的.接口单一职责.一个接口一个功能(如果是在controller层进行权限控制的话,能更好的进行权限控制), 尽量清晰.不过service层可以提高代码复用率.</li>
+<li>生产代码禁止以System及Throwable.printStackTrace的方式输出日志信息, 必须用Logger替代, 注意log等级.</li>
+<li>有些功能尽量使用java官方工具类.不要自己写,比如StringUtils,CollectionUtils,Arrays等.</li>
+<li>guava,程序员的好朋友.</li>
 </ul>
 <h2 id="一些技巧"><a href="#一些技巧" class="headerlink" title="一些技巧"></a>一些技巧</h2><ul>
-<li>运用set的key不能重复,可以去重</li>
+<li>运用set的key不能重复, 可以去重.</li>
 </ul>
 <h2 id="有坑的点"><a href="#有坑的点" class="headerlink" title="有坑的点"></a>有坑的点</h2><ul>
-<li>BigDecimal.add,subtract,multiply,divide,返回的是一个new object,要注意</li>
-<li>开发中还是特别要注意new object的这个问题</li>
+<li>BigDecimal.add,subtract,multiply,divide,返回的是一个new object,要注意.</li>
+<li>开发中还是特别要注意new object的这个问题.</li>
 <li>get/set,方法中最好别写逻辑,报错console不会提示,只能自己一步步debug进去看异常.</li>
 <li>要注意map是无序的,千万不要数据库排序查询出来结果之后,放map.</li>
 </ul>
+<h2 id="性能相关"><a href="#性能相关" class="headerlink" title="性能相关"></a>性能相关</h2><ul>
+<li>利用好缓存, 缓存最常用最适合的地方:数据字典.</li>
+<li>for循环内避免查询处理相同的数据, 多次使用的数据放for循环外面.</li>
+</ul>
 <h2 id="关于工具"><a href="#关于工具" class="headerlink" title="关于工具"></a>关于工具</h2><ul>
-<li>chrome开发者工具: 点击代码窗口左下角的那个’{ }’(pretty print) 标签，能格式化被minify掉的css/js。</li>
-<li>chrome开发者工具: 可以设置网络的访问速度来模拟一个网络很慢的情况。(network-&gt;no throtting-&gt;随意设置)</li>
+<li>chrome开发者工具: 点击代码窗口左下角的那个’{ }’(pretty print) 标签, 能格式化被minify掉的css/js.</li>
+<li>chrome开发者工具: 可以设置网络的访问速度来模拟一个网络很慢的情况.(network-&gt;no throtting-&gt;随意设置).</li>
 </ul>
 ]]></content>
     
     <summary type="html">
     
       &lt;h2 id=&quot;开发习惯&quot;&gt;&lt;a href=&quot;#开发习惯&quot; class=&quot;headerlink&quot; title=&quot;开发习惯&quot;&gt;&lt;/a&gt;开发习惯&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;合理规范注释,前人编码注释清晰了,后人改动思路就明了了.还有就是命名的规范(代码改动,更新注释).&lt;/li&gt;
-&lt;
+&lt;li&gt;合理规范注释, 前人编码注释清晰了, 后人改动思路就明了了.还有就是命名的规范(代码改动,更新注释).&lt;/li&gt;
     
     </summary>
     
