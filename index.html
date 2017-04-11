@@ -319,6 +319,172 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://wo6x5a.github.io/2017/04/11/有关Lucene的一些东西/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="6x5">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="6x5">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/11/有关Lucene的一些东西/" itemprop="url">
+                  有关Lucene的一些东西
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T14:56:50+08:00">
+                2017-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/工作/" itemprop="url" rel="index">
+                    <span itemprop="name">工作</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2017/04/11/有关Lucene的一些东西/" class="leancloud_visitors" data-flag-title="有关Lucene的一些东西">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>因为项目中用到了Lucene,这里简单的说一下关于Lucene的一些东西</p>
+<h2 id="大概介绍"><a href="#大概介绍" class="headerlink" title="大概介绍"></a>大概介绍</h2><p>Lucene 是一个基于 Java 的全文信息检索工具包，它不是一个完整的搜索应用程序，而是为你的应用程序提供索引和搜索功能。Lucene 目前是 Apache Jakarta 家族中的一个开源项目。也是较为流行的基于 Java 开源全文检索工具包。<br>图 1 表示了搜索应用程序和 Lucene 之间的关系，也反映了利用 Lucene 构建搜索应用程序的流程：<br>图 1. 搜索应用程序和 Lucene 之间的关系<br><img src="/images/有关Lucene的一些东西001.jpg" alt="搜索应用程序和 Lucene 之间的关系"></p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>举个例子,索引有点类似目录,就是什么内容,会告诉你在第几页，这样就能帮助读者比较快地找到相关内容的页码。<br>而数据库索引能够大大提高查询的速度原理也是一样，通过目录查找的速度要比一页一页地翻内容高多少倍……当然他还有另外一个原因是它是排好序的。对于检索系统来说核心是一个排序问题。<br>而数据库索引不是为全文索引设计的，因此，使用like数据库索引不是为全文索引设计的，因此，使用like “%keyword%”时，数据库索引是不起作用的，<br>在使用like查询时，搜索过程又变成类似于一页页翻书的遍历过程了，所以对于含有模糊查询的数据库服务来说，LIKE对性能的危害是极大的。<br>如果是需要对多个关键词进行模糊匹配：like”%keyword1%” and like “%keyword2%” …其效率也就可想而知了。</p>
+<p>所以建立一个高效检索系统的关键是建立一个类似于科技索引一样的反向索引机制，将数据源（比如多篇文章）排序顺序存储的同时，有另外一个排好序的关键词列表，<br>用于存储关键词==&gt;文章映射关系，利用这样的映射关系索引：[关键词==&gt;出现关键词的文章编号，出现次数（甚至包括位置：起始偏移量，结束偏移量），出现频率]，<br>检索过程就是把模糊查询变成多个可以利用索引的精确查询的逻辑组合的过程。从而大大提高了多关键词查询的效率，所以，全文检索问题归结到最后是一个排序问题。</p>
+<p>由此可以看出模糊查询相对数据库的精确查询是一个非常不确定的问题，这也是大部分数据库对全文检索支持有限的原因。<br>Lucene最核心的特征是通过特殊的索引结构实现了传统数据库不擅长的全文索引机制，并提供了扩展接口，以方便针对不同应用的定制。</p>
+<h2 id="lucene的一些包"><a href="#lucene的一些包" class="headerlink" title="lucene的一些包"></a>lucene的一些包</h2><p>org.apache.lucene.document:  存储结构<br>这个包提供了一些为封装要索引的文档所需要的类，比如 Document, Field。这样，每一个文档最终被封装成了一个 Document 对象。<br>org.apache.lucene.analysis: 语言分析器<br>这个包主要功能是对文档进行分词，因为文档在建立索引之前必须要进行分词，所以这个包的作用可以看成是为建立索引做准备工作。<br>org.apache.lucene.index: 索引入口<br>这个包提供了一些类来协助创建索引以及对创建好的索引进行更新。这里面有两个基础的类：IndexWriter 和 IndexReader，其中 IndexWriter 是用来创建索引并添加文档到索引中的，IndexReader 是用来删除索引中的文档的。<br>org.apache.lucene.search: 搜索入口<br>这个包提供了对在建立好的索引上进行搜索所需要的类。比如 IndexSearcher 和 Hits, IndexSearcher 定义了在指定的索引上进行搜索的方法，Hits 用来保存搜索得到的结果。<br>org.apache.Lucene.queryParser:    查询分析器<br>org.apache.Lucene.store: 底层IO/存储结构<br>org.apache.Lucene.util: 一些公用的数据结构<br>…</p>
+<h2 id="建立索引"><a href="#建立索引" class="headerlink" title="建立索引"></a>建立索引</h2><p>为了对文档进行索引，Lucene 提供了五个基础的类，他们分别是 Document, Field, IndexWriter, Analyzer, Directory。下面我们分别介绍一下这五个类的用途：<br>Document<br>Document 是用来描述文档的，这里的文档可以指一个 HTML 页面，一封电子邮件，或者是一个文本文件。一个 Document 对象由多个 Field 对象组成的。可以把一个 Document 对象想象成数据库中的一个记录，而每个 Field 对象就是记录的一个字段。<br>Field<br>Field 对象是用来描述一个文档的某个属性的，比如一封电子邮件的标题和内容可以用两个 Field 对象分别描述。<br>Analyzer<br>在一个文档被索引之前，首先需要对文档内容进行分词处理，这部分工作就是由 Analyzer 来做的。Analyzer 类是一个抽象类，它有多个实现。针对不同的语言和应用需要选择适合的 Analyzer。Analyzer 把分词后的内容交给 IndexWriter 来建立索引。<br>IndexWriter<br>IndexWriter 是 Lucene 用来创建索引的一个核心的类，他的作用是把一个个的 Document 对象加到索引中来。<br>Directory<br>这个类代表了 Lucene 的索引的存储的位置，这是一个抽象类，它目前有两个实现，第一个是 FSDirectory，它表示一个存储在文件系统中的索引的位置。第二个是 RAMDirectory，它表示一个存储在内存当中的索引的位置。<br>熟悉了建立索引所需要的这些类后，我们就开始对某个目录下面的文本文件建立索引了，清单 1 给出了对某个目录下的文本文件建立索引的源代码。</p>
+<h2 id="搜索文档"><a href="#搜索文档" class="headerlink" title="搜索文档"></a>搜索文档</h2><p>利用 Lucene 进行搜索就像建立索引一样也是非常方便的。在上面一部分中，我们已经为一个目录下的文本文档建立好了索引，现在我们就要在这个索引上进行搜索以找到包含某个关键词或短语的文档。Lucene 提供了几个基础的类来完成这个过程，它们分别是呢 IndexSearcher, Term, Query, TermQuery, Hits. 下面我们分别介绍这几个类的功能。<br>Query<br>这是一个抽象类，他有多个实现，比如 TermQuery, BooleanQuery, PrefixQuery. 这个类的目的是把用户输入的查询字符串封装成 Lucene 能够识别的 Query。<br>Term<br>Term 是搜索的基本单位，一个 Term 对象有两个 String 类型的域组成。生成一个 Term 对象可以有如下一条语句来完成：Term term = new Term(“fieldName”,”queryWord”); 其中第一个参数代表了要在文档的哪一个 Field 上进行查找，第二个参数代表了要查询的关键词。<br>TermQuery<br>TermQuery 是抽象类 Query 的一个子类，它同时也是 Lucene 支持的最为基本的一个查询类。生成一个 TermQuery 对象由如下语句完成： TermQuery termQuery = new TermQuery(new Term(“fieldName”,”queryWord”)); 它的构造函数只接受一个参数，那就是一个 Term 对象。<br>IndexSearcher<br>IndexSearcher 是用来在建立好的索引上进行搜索的。它只能以只读的方式打开一个索引，所以可以有多个 IndexSearcher 的实例在一个索引上进行操作。<br>Hits<br>Hits 是用来保存搜索的结果的。</p>
+<h2 id="项目使用总结"><a href="#项目使用总结" class="headerlink" title="项目使用总结"></a>项目使用总结</h2><p>现在的项目是这样使用Lucene的:<br>import jar-&gt;用job初始化待查询数据(建立索引)-&gt;查询返回(搜索文档),因为Lucene有很简单的api,这里就不细说了,结尾附上大致的代码例子:</p>
+<h2 id="一个例子"><a href="#一个例子" class="headerlink" title="一个例子"></a>一个例子</h2><p>创建索引:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 处理百科信息</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">procAllForTermBaike</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">	List&lt;Map&lt;String, String&gt;&gt; baikeList = <span class="keyword">new</span> ArrayList&lt;Map&lt;String, String&gt;&gt;();</div><div class="line">	Query&lt;TermBaike&gt; query = <span class="keyword">this</span>.createQuery();</div><div class="line">	<span class="keyword">long</span> counts = <span class="keyword">this</span>.count(query);</div><div class="line">	Integer pages = <span class="keyword">this</span>.luceneService.getPages(Integer.valueOf(String.valueOf(counts)));</div><div class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= pages; i++) &#123;</div><div class="line">		<span class="comment">// 查询获取数据</span></div><div class="line">		query.offset((i - <span class="number">1</span>) * <span class="number">100</span>).limit(<span class="number">100</span>);</div><div class="line">		QueryResults&lt;TermBaike&gt; result = <span class="keyword">this</span>.find(query);</div><div class="line">		List&lt;TermBaike&gt; TermBaikeList = result.asList();</div><div class="line">		<span class="comment">// 封装返回数据</span></div><div class="line">		<span class="keyword">for</span> (TermBaike termBaike : TermBaikeList) &#123;</div><div class="line">			Map&lt;String, String&gt; map = <span class="keyword">new</span> HashMap&lt;String, String&gt;();</div><div class="line">			map.put(<span class="string">"id"</span>, termBaike.get_id());</div><div class="line">			map.put(<span class="string">"name"</span>, termBaike.getVcName());</div><div class="line">			map.put(<span class="string">"nameEn"</span>, termBaike.getVcNameEn());</div><div class="line">			map.put(<span class="string">"label"</span>, String.valueOf(ServiceTypeEnum.BAIKE_LAB.getValue()));</div><div class="line">			baikeList.add(map);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">this</span>.luceneService.createIndex(ServiceTypeEnum.BAIKE.getKey(), baikeList, Boolean.TRUE);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>调用的方法:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 获取页数</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> Integer <span class="title">getPages</span><span class="params">(Integer totalNum)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">	Integer pages = <span class="number">1</span>;</div><div class="line">	<span class="keyword">if</span> ((totalNum % <span class="number">100</span>) == <span class="number">0</span>) &#123;</div><div class="line">		pages = totalNum / <span class="number">100</span>;</div><div class="line">	&#125; <span class="keyword">else</span> &#123;</div><div class="line">		pages = (totalNum / <span class="number">100</span>) + <span class="number">1</span>;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> pages;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 创建索引</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">createIndex</span><span class="params">(Integer serviceType, List&lt;Map&lt;String, String&gt;&gt; list, Boolean isDel)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">	IndexWriter indexWriter = <span class="keyword">this</span>.initIndexWriter(serviceType, isDel);</div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">		<span class="keyword">for</span> (Map&lt;String, String&gt; map : list) &#123;</div><div class="line">			Document doc = <span class="keyword">new</span> Document();</div><div class="line">			<span class="keyword">for</span> (Map.Entry&lt;String, String&gt; entry : map.entrySet()) &#123;</div><div class="line">				<span class="keyword">if</span> (<span class="keyword">null</span> != entry.getKey() &amp;&amp; <span class="keyword">null</span> != entry.getValue()) &#123;</div><div class="line">					doc.add(<span class="keyword">new</span> TextField(entry.getKey(), entry.getValue(), Field.Store.YES));</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">			indexWriter.addDocument(doc);</div><div class="line">		&#125;</div><div class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">		logger.error(e);</div><div class="line">		e.printStackTrace();</div><div class="line">	&#125; <span class="keyword">finally</span> &#123;</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">null</span> != indexWriter) &#123;</div><div class="line">			indexWriter.close();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>搜索文档:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * 百科信息查询</div><div class="line"> * </div><div class="line"> * <span class="doctag">@param</span> key 关键字</div><div class="line"> * <span class="doctag">@param</span> currentPage 页码</div><div class="line"> * <span class="doctag">@return</span></div><div class="line"> * <span class="doctag">@throws</span> Exception</div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> List&lt;TermBaikeVo&gt; <span class="title">queryBaike</span><span class="params">(String key, Integer currentPage)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">	List&lt;TermBaikeVo&gt; termBaikeVoList = <span class="keyword">new</span> ArrayList&lt;TermBaikeVo&gt;();</div><div class="line">	Sort sort = <span class="keyword">new</span> Sort(<span class="keyword">new</span> SortField(<span class="string">"name"</span>, SortField.Type.STRING, <span class="keyword">true</span>));</div><div class="line">	List&lt;Document&gt; docList = <span class="keyword">this</span>.luceneService.query(ServiceTypeEnum.BAIKE.getKey(), key, <span class="string">"name"</span>, sort, currentPage, DEF_ENUM.DEF_TWENTY.getnCode());</div><div class="line">	<span class="keyword">for</span> (Document doc : docList) &#123;</div><div class="line">		TermBaikeVo termBaikeVo = <span class="keyword">new</span> TermBaikeVo();</div><div class="line">		termBaikeVo.setBaikeId(doc.get(<span class="string">"id"</span>));</div><div class="line">		termBaikeVo.setVcName(doc.get(<span class="string">"name"</span>));</div><div class="line">		termBaikeVo.setVcName(doc.get(<span class="string">"nameEn"</span>));</div><div class="line">		termBaikeVo.setVcLabel(doc.get(<span class="string">"label"</span>));</div><div class="line">		termBaikeVoList.add(termBaikeVo);</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> termBaikeVoList;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>调用的方法:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line">* 单条件分页查询</div><div class="line">*/</div><div class="line"><span class="function"><span class="keyword">public</span> List&lt;Document&gt; <span class="title">query</span><span class="params">(Integer serviceType, String key, String field, Sort sort, Integer currentPage, Integer pageSize)</span> <span class="keyword">throws</span> Exception </span>&#123;</div><div class="line">	List&lt;Document&gt; docList = <span class="keyword">new</span> ArrayList&lt;Document&gt;();</div><div class="line">	IndexReader reader = <span class="keyword">this</span>.initIndexReader(serviceType);</div><div class="line">	<span class="keyword">try</span> &#123;</div><div class="line">		Analyzer analyzer = <span class="keyword">new</span> StandardAnalyzer();</div><div class="line">		IndexSearcher indexSearcher = <span class="keyword">new</span> IndexSearcher(reader);</div><div class="line">		QueryParser parser = <span class="keyword">new</span> QueryParser(field, analyzer);</div><div class="line">		org.apache.lucene.search.Query query = parser.createPhraseQuery(field, key);</div><div class="line">		TopDocs topDocs = indexSearcher.search(query, currentPage + pageSize, sort);</div><div class="line">		ScoreDoc[] scoreDocs = topDocs.scoreDocs;</div><div class="line">		<span class="keyword">if</span> (scoreDocs.length == <span class="number">0</span>) &#123;</div><div class="line">			scoreDocs = <span class="keyword">this</span>.wildcardQuery(key, field, indexSearcher);</div><div class="line">		&#125;</div><div class="line">		<span class="keyword">int</span> begin = pageSize * (currentPage - <span class="number">1</span>);</div><div class="line">		<span class="keyword">int</span> end = Math.min(begin + pageSize, scoreDocs.length);</div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = begin; i &lt; end; i++) &#123;</div><div class="line">			<span class="keyword">int</span> docID = scoreDocs[i].doc;</div><div class="line">			Document doc = indexSearcher.doc(docID);</div><div class="line">			docList.add(doc);</div><div class="line">		&#125;</div><div class="line">	&#125; <span class="keyword">catch</span> (Exception e) &#123;</div><div class="line">		logger.error(e);</div><div class="line">	&#125; <span class="keyword">finally</span> &#123;</div><div class="line">		<span class="keyword">if</span> (<span class="keyword">null</span> != reader) &#123;</div><div class="line">			reader.close();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	<span class="keyword">return</span> docList;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="https://wo6x5a.github.io/2017/04/01/编码散记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1909,156 +2075,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wo6x5a.github.io/2017/03/27/java-线程池的使用/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="6x5">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="6x5">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/27/java-线程池的使用/" itemprop="url">
-                  java 线程池的使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-27T17:25:25+08:00">
-                2017-03-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-             <span id="/2017/03/27/java-线程池的使用/" class="leancloud_visitors" data-flag-title="java 线程池的使用">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">阅读次数 </span>
-               
-                 <span class="leancloud-visitors-count"></span>
-             </span>
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.util.concurrent.ArrayBlockingQueue;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.ThreadPoolExecutor;</div><div class="line"><span class="keyword">import</span> java.util.concurrent.TimeUnit;</div><div class="line"></div><div class="line"><span class="comment">/**</span></div><div class="line"> * 线程池.</div><div class="line"> * </div><div class="line"> * <span class="doctag">@author</span> chenwulou</div><div class="line"> *</div><div class="line"> */</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TestThreadPool</span> </span>&#123;</div><div class="line">	<span class="comment">/**</span></div><div class="line">	 * 下面解释下一下构造器中各个参数的含义：</div><div class="line">	 * </div><div class="line">	 * corePoolSize：核心池的大小，这个参数跟后面讲述的线程池的实现原理有非常大的关系。在创建了线程池后，默认情况下，&lt;/br&gt;</div><div class="line">	 * 线程池中并没有任何线程，而是等待有任务到来才创建线程去执行任务，除非调用了prestartAllCoreThreads()</div><div class="line">	 * 或者prestartCoreThread()方法，&lt;/br&gt;</div><div class="line">	 * 从这2个方法的名字就可以看出，是预创建线程的意思，即在没有任务到来之前就创建corePoolSize个线程或者一个线程。&lt;/br&gt;</div><div class="line">	 * 默认情况下，在创建了线程池后，线程池中的线程数为0，当有任务来之后，就会创建一个线程去执行任务，</div><div class="line">	 * 当线程池中的线程数目达到corePoolSize后，&lt;/br&gt;</div><div class="line">	 * 就会把到达的任务放到缓存队列当中；&lt;/br&gt;</div><div class="line">	 * maximumPoolSize：线程池最大线程数，这个参数也是一个非常重要的参数，它表示在线程池中最多能创建多少个线程；&lt;/br&gt;</div><div class="line">	 * keepAliveTime：表示线程没有任务执行时最多保持多久时间会终止。&lt;/br&gt;</div><div class="line">	 * 默认情况下，只有当线程池中的线程数大于corePoolSize时，keepAliveTime才会起作用，&lt;/br&gt;</div><div class="line">	 * 直到线程池中的线程数不大于corePoolSize，即当线程池中的线程数大于corePoolSize时，&lt;/br&gt;</div><div class="line">	 * 如果一个线程空闲的时间达到keepAliveTime，则会终止，直到线程池中的线程数不超过corePoolSize。&lt;/br&gt;</div><div class="line">	 * 但是如果调用了allowCoreThreadTimeOut(boolean)方法，在线程池中的线程数不大于corePoolSize时，&lt;/br&gt;</div><div class="line">	 * keepAliveTime参数也会起作用，直到线程池中的线程数为0；&lt;/br&gt;</div><div class="line">	 * unit：参数keepAliveTime的时间单位，有7种取值，在TimeUnit类中有7种静态属性：&lt;/br&gt;</div><div class="line">	 * TimeUnit.DAYS; //天&lt;/br&gt;</div><div class="line">	 * TimeUnit.HOURS; //小时&lt;/br&gt;</div><div class="line">	 * TimeUnit.MINUTES; //分钟&lt;/br&gt;</div><div class="line">	 * TimeUnit.SECONDS; //秒&lt;/br&gt;</div><div class="line">	 * TimeUnit.MILLISECONDS; //毫秒&lt;/br&gt;</div><div class="line">	 * TimeUnit.MICROSECONDS; //微妙&lt;/br&gt;</div><div class="line">	 * TimeUnit.NANOSECONDS; //纳秒&lt;/br&gt;</div><div class="line">	 * </div><div class="line">	 * <span class="doctag">@param</span> args</div><div class="line">	 */</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		<span class="comment">//自动创建线程池</span></div><div class="line"><span class="comment">//		ExecutorService executorService = Executors.newCachedThreadPool();</span></div><div class="line"><span class="comment">//		ExecutorService executorService = Executors.newSingleThreadExecutor();</span></div><div class="line"><span class="comment">//		ExecutorService executorService = Executors.newFixedThreadPool(3);</span></div><div class="line">		ThreadPoolExecutor executor = <span class="keyword">new</span> ThreadPoolExecutor(<span class="number">5</span>, <span class="number">15</span>, <span class="number">200</span>, TimeUnit.MILLISECONDS,</div><div class="line">				<span class="keyword">new</span> ArrayBlockingQueue&lt;Runnable&gt;(<span class="number">5</span>));</div><div class="line"></div><div class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">15</span>; i++) &#123;</div><div class="line">			MyTask myTask = <span class="keyword">new</span> MyTask(i);</div><div class="line"><span class="comment">//			Thread t = new Thread(myTask);</span></div><div class="line">			<span class="comment">//设置优先级</span></div><div class="line"><span class="comment">//			t.setPriority(1);</span></div><div class="line">			executor.execute(myTask);</div><div class="line">			System.out.println(<span class="string">"线程池中线程数目："</span> + executor.getPoolSize() + <span class="string">"，队列中等待执行的任务数目："</span></div><div class="line">					+ executor.getQueue().size() + <span class="string">"，已执行完毕的任务数目："</span> + executor.getCompletedTaskCount());</div><div class="line">		&#125;</div><div class="line">		executor.shutdown();</div><div class="line"><span class="comment">//		executor.shutdownNow();</span></div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyTask</span> <span class="keyword">implements</span> <span class="title">Runnable</span> </span>&#123;</div><div class="line">	<span class="keyword">private</span> <span class="keyword">int</span> taskNum;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">MyTask</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</div><div class="line">		<span class="keyword">this</span>.taskNum = num;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="meta">@Override</span></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"正在执行task "</span> + taskNum);</div><div class="line">		<span class="keyword">try</span> &#123;</div><div class="line"><span class="comment">//			Thread.sleep(10);</span></div><div class="line">			Thread.currentThread().sleep(<span class="number">10</span>);</div><div class="line">		&#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</div><div class="line">			e.printStackTrace();</div><div class="line">		&#125;</div><div class="line">		System.out.println(<span class="string">"task "</span> + taskNum + <span class="string">"执行完毕"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -2108,7 +2124,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2126,7 +2142,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
