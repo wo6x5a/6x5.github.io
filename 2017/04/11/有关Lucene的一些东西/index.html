@@ -95,19 +95,19 @@
 
 
 <meta name="description" content="因为项目中用到了Lucene,这里简单的说一下关于Lucene的一些东西.
-大概介绍Lucene 是一个基于 Java 的全文信息检索工具包，它不是一个完整的搜索应用程序，而是为你的应用程序提供索引和搜索功能。Lucene 目前是 Apache Jakarta 家族中的一个开源项目。也是较为流行的基于 Java 开源全文检索工具包。图 1 表示了搜索应用程序和 Lucene 之间的关系，也反映了利">
+大概介绍Lucene 是一个基于 Java 的全文信息检索工具包，它不是一个完整的搜索应用程序，而是为你的应用程序提供索引和搜索功能。Lucene 目前是 Apache Jakarta 家族中的一个开源项目。也是较为流行的基于 Java 开源全文检索工具包。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="有关Lucene的一些东西">
 <meta property="og:url" content="https://wo6x5a.github.io/2017/04/11/有关Lucene的一些东西/index.html">
 <meta property="og:site_name" content="6x5">
 <meta property="og:description" content="因为项目中用到了Lucene,这里简单的说一下关于Lucene的一些东西.
-大概介绍Lucene 是一个基于 Java 的全文信息检索工具包，它不是一个完整的搜索应用程序，而是为你的应用程序提供索引和搜索功能。Lucene 目前是 Apache Jakarta 家族中的一个开源项目。也是较为流行的基于 Java 开源全文检索工具包。图 1 表示了搜索应用程序和 Lucene 之间的关系，也反映了利">
+大概介绍Lucene 是一个基于 Java 的全文信息检索工具包，它不是一个完整的搜索应用程序，而是为你的应用程序提供索引和搜索功能。Lucene 目前是 Apache Jakarta 家族中的一个开源项目。也是较为流行的基于 Java 开源全文检索工具包。">
 <meta property="og:image" content="https://wo6x5a.github.io/images/有关Lucene的一些东西001.jpg">
-<meta property="og:updated_time" content="2017-04-11T09:25:51.353Z">
+<meta property="og:updated_time" content="2017-04-11T09:29:11.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="有关Lucene的一些东西">
 <meta name="twitter:description" content="因为项目中用到了Lucene,这里简单的说一下关于Lucene的一些东西.
-大概介绍Lucene 是一个基于 Java 的全文信息检索工具包，它不是一个完整的搜索应用程序，而是为你的应用程序提供索引和搜索功能。Lucene 目前是 Apache Jakarta 家族中的一个开源项目。也是较为流行的基于 Java 开源全文检索工具包。图 1 表示了搜索应用程序和 Lucene 之间的关系，也反映了利">
+大概介绍Lucene 是一个基于 Java 的全文信息检索工具包，它不是一个完整的搜索应用程序，而是为你的应用程序提供索引和搜索功能。Lucene 目前是 Apache Jakarta 家族中的一个开源项目。也是较为流行的基于 Java 开源全文检索工具包。">
 <meta name="twitter:image" content="https://wo6x5a.github.io/images/有关Lucene的一些东西001.jpg">
 
 
@@ -439,7 +439,7 @@
 
       
         <p>因为项目中用到了Lucene,这里简单的说一下关于Lucene的一些东西.</p>
-<h2 id="大概介绍"><a href="#大概介绍" class="headerlink" title="大概介绍"></a>大概介绍</h2><p>Lucene 是一个基于 Java 的全文信息检索工具包，它不是一个完整的搜索应用程序，而是为你的应用程序提供索引和搜索功能。Lucene 目前是 Apache Jakarta 家族中的一个开源项目。也是较为流行的基于 Java 开源全文检索工具包。<br>图 1 表示了搜索应用程序和 Lucene 之间的关系，也反映了利用 Lucene 构建搜索应用程序的流程：<br>图 1. 搜索应用程序和 Lucene 之间的关系<br><img src="/images/有关Lucene的一些东西001.jpg" alt="搜索应用程序和 Lucene 之间的关系"></p>
+<h2 id="大概介绍"><a href="#大概介绍" class="headerlink" title="大概介绍"></a>大概介绍</h2><p>Lucene 是一个基于 Java 的全文信息检索工具包，它不是一个完整的搜索应用程序，而是为你的应用程序提供索引和搜索功能。Lucene 目前是 Apache Jakarta 家族中的一个开源项目。也是较为流行的基于 Java 开源全文检索工具包。<br><a id="more"></a><br>图 1 表示了搜索应用程序和 Lucene 之间的关系，也反映了利用 Lucene 构建搜索应用程序的流程：<br>图 1. 搜索应用程序和 Lucene 之间的关系<br><img src="/images/有关Lucene的一些东西001.jpg" alt="搜索应用程序和 Lucene 之间的关系"></p>
 <h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><p>举个例子,索引有点类似目录,就是什么内容,会告诉你在第几页，这样就能帮助读者比较快地找到相关内容的页码。<br>而数据库索引能够大大提高查询的速度原理也是一样，通过目录查找的速度要比一页一页地翻内容高多少倍……当然他还有另外一个原因是它是排好序的。对于检索系统来说核心是一个排序问题。<br>而数据库索引不是为全文索引设计的，因此，使用like数据库索引不是为全文索引设计的，因此，使用like “%keyword%”时，数据库索引是不起作用的，<br>在使用like查询时，搜索过程又变成类似于一页页翻书的遍历过程了，所以对于含有模糊查询的数据库服务来说，LIKE对性能的危害是极大的。<br>如果是需要对多个关键词进行模糊匹配：like”%keyword1%” and like “%keyword2%” …其效率也就可想而知了。</p>
 <p>所以建立一个高效检索系统的关键是建立一个类似于科技索引一样的反向索引机制，将数据源（比如多篇文章）排序顺序存储的同时，有另外一个排好序的关键词列表，<br>用于存储关键词==&gt;文章映射关系，利用这样的映射关系索引：[关键词==&gt;出现关键词的文章编号，出现次数（甚至包括位置：起始偏移量，结束偏移量），出现频率]，<br>检索过程就是把模糊查询变成多个可以利用索引的精确查询的逻辑组合的过程。从而大大提高了多关键词查询的效率，所以，全文检索问题归结到最后是一个排序问题。</p>
 <p>由此可以看出模糊查询相对数据库的精确查询是一个非常不确定的问题，这也是大部分数据库对全文检索支持有限的原因。<br>Lucene最核心的特征是通过特殊的索引结构实现了传统数据库不擅长的全文索引机制，并提供了扩展接口，以方便针对不同应用的定制。</p>

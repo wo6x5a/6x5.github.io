@@ -94,19 +94,16 @@
 
 
 
-<meta name="description" content="目前流行的较为公用认可的工具类：Apache的两个版本：（反射机制）12org.apache.commons.beanutils.PropertyUtils.copyProperties(Object dest, Object orig)org.apache.commons.beanutils.BeanUtils.copyProperties(Object dest, Object orig)
-S">
+<meta name="description" content="目前流行的较为公用认可的工具类：Apache的两个版本：（反射机制）12org.apache.commons.beanutils.PropertyUtils.copyProperties(Object dest, Object orig)org.apache.commons.beanutils.BeanUtils.copyProperties(Object dest, Object orig)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="对象拷贝类PropertyUtils，BeanUtils，BeanCopier">
 <meta property="og:url" content="https://wo6x5a.github.io/2017/03/27/对象拷贝类PropertyUtils，BeanUtils，BeanCopier/index.html">
 <meta property="og:site_name" content="6x5">
-<meta property="og:description" content="目前流行的较为公用认可的工具类：Apache的两个版本：（反射机制）12org.apache.commons.beanutils.PropertyUtils.copyProperties(Object dest, Object orig)org.apache.commons.beanutils.BeanUtils.copyProperties(Object dest, Object orig)
-S">
-<meta property="og:updated_time" content="2017-03-30T02:38:06.957Z">
+<meta property="og:description" content="目前流行的较为公用认可的工具类：Apache的两个版本：（反射机制）12org.apache.commons.beanutils.PropertyUtils.copyProperties(Object dest, Object orig)org.apache.commons.beanutils.BeanUtils.copyProperties(Object dest, Object orig)">
+<meta property="og:updated_time" content="2017-04-11T09:31:03.272Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="对象拷贝类PropertyUtils，BeanUtils，BeanCopier">
-<meta name="twitter:description" content="目前流行的较为公用认可的工具类：Apache的两个版本：（反射机制）12org.apache.commons.beanutils.PropertyUtils.copyProperties(Object dest, Object orig)org.apache.commons.beanutils.BeanUtils.copyProperties(Object dest, Object orig)
-S">
+<meta name="twitter:description" content="目前流行的较为公用认可的工具类：Apache的两个版本：（反射机制）12org.apache.commons.beanutils.PropertyUtils.copyProperties(Object dest, Object orig)org.apache.commons.beanutils.BeanUtils.copyProperties(Object dest, Object orig)">
 
 
 
@@ -437,6 +434,7 @@ S">
 
       
         <h3 id="目前流行的较为公用认可的工具类："><a href="#目前流行的较为公用认可的工具类：" class="headerlink" title="目前流行的较为公用认可的工具类："></a>目前流行的较为公用认可的工具类：</h3><h4 id="Apache的两个版本：（反射机制）"><a href="#Apache的两个版本：（反射机制）" class="headerlink" title="Apache的两个版本：（反射机制）"></a>Apache的两个版本：（反射机制）</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">org.apache.commons.beanutils.PropertyUtils.copyProperties(Object dest, Object orig)</div><div class="line">org.apache.commons.beanutils.BeanUtils.copyProperties(Object dest, Object orig)</div></pre></td></tr></table></figure>
+<a id="more"></a> 
 <h4 id="Spring版本：（反射机制）"><a href="#Spring版本：（反射机制）" class="headerlink" title="Spring版本：（反射机制）"></a>Spring版本：（反射机制）</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">org.springframework.beans.BeanUtils.copyProperties(Object source, Object target, Class editable, String[] ignoreProperties)</div></pre></td></tr></table></figure>
 <h4 id="cglib版本：（使用动态代理，效率高）"><a href="#cglib版本：（使用动态代理，效率高）" class="headerlink" title="cglib版本：（使用动态代理，效率高）"></a>cglib版本：（使用动态代理，效率高）</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">net.sf.cglib.beans.BeanCopier.copy(Object paramObject1, Object paramObject2, Converter paramConverter)</div></pre></td></tr></table></figure>
 <h3 id="原理简介"><a href="#原理简介" class="headerlink" title="原理简介"></a>原理简介</h3><h4 id="反射类型：（apache）"><a href="#反射类型：（apache）" class="headerlink" title="反射类型：（apache）"></a>反射类型：（apache）</h4><p>都使用静态类调用，最终转化虚拟机中两个单例的工具对象。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="title">BeanUtilsBean</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">this</span>(<span class="keyword">new</span> ConvertUtilsBean(), <span class="keyword">new</span> PropertyUtilsBean());</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
