@@ -101,6 +101,9 @@ public void procAllForTermBaike() throws Exception {
 	this.luceneService.createIndex(ServiceTypeEnum.BAIKE.getKey(), baikeList, Boolean.TRUE);
 }
 ```
+...job相关的代码就不放上来了,就是用job跑这个procxxx方法
+
+
 
 调用的方法:
 
