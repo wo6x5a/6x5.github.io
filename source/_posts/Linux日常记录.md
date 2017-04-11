@@ -14,6 +14,7 @@ categories: 备忘
 命令格式: mv   source    dest
 
 mv: 命令字 source: 源文件 dest: 目的地址
+<!-- more --> 
 
 - Linux下拷贝命令
 

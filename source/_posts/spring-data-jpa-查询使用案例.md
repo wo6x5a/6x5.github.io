@@ -37,9 +37,9 @@ public String getSumAmount(final AcctDtlSearchDto searchDto, final ERecvPayFlag 
 	result = (null == result ? BigDecimal.ZERO : result);                                       
 	return result.toString();                                                                   
 }                   
-
-
-
+```
+<!--more-->
+```java
 /**
  * 
  */

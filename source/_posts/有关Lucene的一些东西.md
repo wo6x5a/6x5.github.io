@@ -8,6 +8,7 @@ categories: 工作
 因为项目中用到了Lucene,这里简单的说一下关于Lucene的一些东西.
 ## 大概介绍
 Lucene 是一个基于 Java 的全文信息检索工具包，它不是一个完整的搜索应用程序，而是为你的应用程序提供索引和搜索功能。Lucene 目前是 Apache Jakarta 家族中的一个开源项目。也是较为流行的基于 Java 开源全文检索工具包。
+<!-- more --> 
 图 1 表示了搜索应用程序和 Lucene 之间的关系，也反映了利用 Lucene 构建搜索应用程序的流程：
 图 1. 搜索应用程序和 Lucene 之间的关系
 ![搜索应用程序和 Lucene 之间的关系](/images/有关Lucene的一些东西001.jpg)

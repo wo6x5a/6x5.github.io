@@ -7,6 +7,7 @@ categories: 备忘
 ## 安装grunt
 
 Grunt运行离不开NodeJS和NPM。因此要使用Grunt首要的条件，你的系统需要安装NodeJS和NPM。
+<!-- more --> 
 
 > * 安装NodeJS
 

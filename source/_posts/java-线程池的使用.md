@@ -7,8 +7,10 @@ categories: 技术
 ```java
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-
+import java.util.concurrent.TimeUnit;            
+```
+<!--more-->
+```java
 /**
  * 线程池.
  * 

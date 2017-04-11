@@ -16,6 +16,7 @@ categories: 备忘
     [root@linuxprobe ~]# systemctl start mariadb
     [root@linuxprobe ~]# systemctl enable mariadb
     ```
+	<!-- more --> 
     2. 为了保证数据库的安全性，一定要进行初始化工作：
     
     第1步：设定root用户密码。

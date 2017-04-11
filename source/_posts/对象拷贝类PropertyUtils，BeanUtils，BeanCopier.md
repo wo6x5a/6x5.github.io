@@ -11,6 +11,7 @@ categories: 技术
 org.apache.commons.beanutils.PropertyUtils.copyProperties(Object dest, Object orig)
 org.apache.commons.beanutils.BeanUtils.copyProperties(Object dest, Object orig)
 ```
+<!-- more --> 
 #### Spring版本：（反射机制）
 ```java
 org.springframework.beans.BeanUtils.copyProperties(Object source, Object target, Class editable, String[] ignoreProperties)
