@@ -60,7 +60,7 @@
     <link href="https://wo6x5a.github.io/2017/04/01/%E7%BC%96%E7%A0%81%E6%95%A3%E8%AE%B0/"/>
     <id>https://wo6x5a.github.io/2017/04/01/编码散记/</id>
     <published>2017-04-01T08:14:23.000Z</published>
-    <updated>2017-04-11T09:30:46.617Z</updated>
+    <updated>2017-04-12T06:42:15.130Z</updated>
     
     <content type="html"><![CDATA[<h2 id="开发习惯"><a href="#开发习惯" class="headerlink" title="开发习惯"></a>开发习惯</h2><ul>
 <li>guava,程序员的好朋友.</li>
@@ -70,17 +70,18 @@
 <li>合理规范注释, 前人编码注释清晰了, 后人改动思路就明了了.还有就是命名的规范(代码改动,更新注释).</li>
 <li>尽量不要写重复代码,多次使用的代码抽出来独立成为一个方法调用,private或public根据具体业务情况而定.</li>
 <li>生产代码禁止以System及Throwable.printStackTrace的方式输出日志信息, 必须用Logger替代, 注意log等级.</li>
-<li><p>controller层是前台和后台交互的.接口单一职责.一个接口一个功能(如果是在controller层进行权限控制的话,能更好的进行权限控制), 尽量清晰.不过service层可以提高代码复用率.</p>
-<a id="more"></a> 
-<h2 id="一些技巧"><a href="#一些技巧" class="headerlink" title="一些技巧"></a>一些技巧</h2></li>
-<li><p>运用set的key不能重复, 可以去重.</p>
+<li>controller层是前台和后台交互的.接口单一职责.一个接口一个功能(如果是在controller层进行权限控制的话,能更好的进行权限控制), 尽量清晰.不过service层可以提高代码复用率.<a id="more"></a> 
 </li>
+</ul>
+<h2 id="一些技巧"><a href="#一些技巧" class="headerlink" title="一些技巧"></a>一些技巧</h2><ul>
+<li>运用set的key不能重复, 可以去重.</li>
 </ul>
 <h2 id="有坑的点"><a href="#有坑的点" class="headerlink" title="有坑的点"></a>有坑的点</h2><ul>
 <li>开发中还是特别要注意new object的这个问题.</li>
 <li>要注意map是无序的,千万不要数据库排序查询出来结果之后,放map.</li>
 <li>BigDecimal.add,subtract,multiply,divide,返回的是一个new object,要注意.</li>
 <li>get/set,方法中最好别写逻辑,报错console不会提示,只能自己一步步debug进去看异常.</li>
+<li>注意Integer(-128~127)值的==和equals比较,(-XX:AutoBoxCacheMax这个参数可以了解下)</li>
 </ul>
 <h2 id="性能相关"><a href="#性能相关" class="headerlink" title="性能相关"></a>性能相关</h2><ul>
 <li>利用好缓存, 缓存最常用最适合的地方:数据字典.</li>
@@ -102,7 +103,7 @@
 &lt;li&gt;合理规范注释, 前人编码注释清晰了, 后人改动思路就明了了.还有就是命名的规范(代码改动,更新注释).&lt;/li&gt;
 &lt;li&gt;尽量不要写重复代码,多次使用的代码抽出来独立成为一个方法调用,private或public根据具体业务情况而定.&lt;/li&gt;
 &lt;li&gt;生产代码禁止以System及Throwable.printStackTrace的方式输出日志信息, 必须用Logger替代, 注意log等级.&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;controller层是前台和后台交互的.接口单一职责.一个接口一个功能(如果是在controller层进行权限控制的话,能更好的进行权限控制), 尽量清晰.不过service层可以提高代码复用率.&lt;/p&gt;
+&lt;li&gt;controller层是前台和后台交互的.接口单一职责.一个接口一个功能(如果是在controller层进行权限控制的话,能更好的进行权限控制), 尽量清晰.不过service层可以提高代码复用率.
     
     </summary>
     
