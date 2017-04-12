@@ -66,8 +66,8 @@ TermQuery
 TermQuery 是抽象类 Query 的一个子类，它同时也是 Lucene 支持的最为基本的一个查询类。生成一个 TermQuery 对象由如下语句完成： TermQuery termQuery = new TermQuery(new Term(“fieldName”,”queryWord”)); 它的构造函数只接受一个参数，那就是一个 Term 对象。
 IndexSearcher
 IndexSearcher 是用来在建立好的索引上进行搜索的。它只能以只读的方式打开一个索引，所以可以有多个 IndexSearcher 的实例在一个索引上进行操作。
-Hits
-Hits 是用来保存搜索的结果的。
+TopDocs
+TopDocs 是用来保存搜索的结果的。
 
 ## 项目使用总结
 现在的项目是这样使用Lucene的:
