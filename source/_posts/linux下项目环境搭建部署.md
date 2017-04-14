@@ -91,6 +91,7 @@ categories: 备忘
 	```
 	#启动redis
 	src/redis-server &
+	(/home/chenwulou/redis-3.2.4/src/redis-server /home/chenwulou/redis-3.2.4/redis.conf &>/dev/null &)
 	#关闭redis
 	src/redis-cli shutdown
 	```
