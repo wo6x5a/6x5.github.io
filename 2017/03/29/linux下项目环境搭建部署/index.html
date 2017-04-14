@@ -110,7 +110,7 @@
 
 启动mariadb服务程序并添加到开机启动项中：
 12[root@linuxprobe ~]# systemctl start mariadb[root@linuxprobe ~]# systemctl enable mariadb">
-<meta property="og:updated_time" content="2017-04-11T09:30:22.457Z">
+<meta property="og:updated_time" content="2017-04-14T02:22:45.590Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="linux下项目环境搭建部署">
 <meta name="twitter:description" content="centos7安装  不做展示,自行解决
@@ -483,7 +483,7 @@
 <p>  安装redis</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#下载</div><div class="line">wget http://download.redis.io/releases/redis-3.0.0.tar.gz</div><div class="line">tar zxvf redis-3.0.0.tar.gz</div><div class="line">cd redis-3.0.0</div><div class="line">#如果不加参数,linux下会报错</div><div class="line">make MALLOC=libc</div></pre></td></tr></table></figure>
 <p>  启动</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#启动redis</div><div class="line">src/redis-server &amp;</div><div class="line">#关闭redis</div><div class="line">src/redis-cli shutdown</div></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#启动redis</div><div class="line">src/redis-server &amp;</div><div class="line"></div><div class="line">(/home/chenwulou/redis-3.2.4/src/redis-server /home/chenwulou/redis-3.2.4/redis.conf &amp;&gt;/dev/null &amp;)</div><div class="line">#关闭redis</div><div class="line">src/redis-cli shutdown</div></pre></td></tr></table></figure>
 <p>  测试</p>
   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ src/redis-cli</div><div class="line">127.0.0.1:6379&gt; set foo bar</div><div class="line">OK</div><div class="line">127.0.0.1:6379&gt; get foo</div><div class="line">&quot;bar&quot;</div><div class="line">$</div></pre></td></tr></table></figure>
 </li>
