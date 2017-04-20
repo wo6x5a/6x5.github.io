@@ -486,7 +486,7 @@ fancybox: true
 
 # Internal version: 1.0.0
 # https://github.com/hustcc/canvas-nest.js
-canvas_nest: true
+canvas_nest: false
 
 
 # Script Vendors.
