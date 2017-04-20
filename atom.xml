@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wo6x5a.github.io/"/>
-  <updated>2017-04-12T07:05:55.157Z</updated>
+  <updated>2017-04-20T08:02:47.661Z</updated>
   <id>https://wo6x5a.github.io/</id>
   
   <author>
@@ -14,6 +14,49 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo的一些小问题</title>
+    <link href="https://wo6x5a.github.io/2017/04/20/hexo%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
+    <id>https://wo6x5a.github.io/2017/04/20/hexo的一些小问题/</id>
+    <published>2017-04-20T07:33:11.000Z</published>
+    <updated>2017-04-20T08:02:47.661Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
+<li>hexo clean :清除缓存文件</li>
+<li>hexo generate (hexo g) :生成静态文件</li>
+<li>hexo server :启动服务</li>
+<li>hexo deploy (hexo d) :部署到服务器</li>
+<li>hexo new “文章标题” :新建文章(默认生成在hexo\source_posts目录下)<a id="more"></a>
+</li>
+</ul>
+<h2 id="美化页面"><a href="#美化页面" class="headerlink" title="美化页面"></a>美化页面</h2><ul>
+<li>next 主题挺好看.</li>
+<li>去除底部xxxx强力驱动等内容:注释(hexo\themes\hexo-theme-next-5.1.0\layout_partials\footer.swig)的’ if theme.copyright ….. endif ‘中的内容</li>
+</ul>
+<h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h2><ul>
+<li>hexo:<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></li>
+<li>next:<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; class=&quot;headerlink&quot; title=&quot;常用命令&quot;&gt;&lt;/a&gt;常用命令&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;hexo clean :清除缓存文件&lt;/li&gt;
+&lt;li&gt;hexo generate (hexo g) :生成静态文件&lt;/li&gt;
+&lt;li&gt;hexo server :启动服务&lt;/li&gt;
+&lt;li&gt;hexo deploy (hexo d) :部署到服务器&lt;/li&gt;
+&lt;li&gt;hexo new “文章标题” :新建文章(默认生成在hexo\source_posts目录下)
+    
+    </summary>
+    
+      <category term="备忘" scheme="https://wo6x5a.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+    
+    
+      <category term="hexo" scheme="https://wo6x5a.github.io/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>有关Lucene的一些东西</title>
