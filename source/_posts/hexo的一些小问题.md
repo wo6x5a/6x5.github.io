@@ -16,7 +16,17 @@ categories: 备忘
 
 ## 美化页面
 - next 主题挺好看.
-- 去除底部xxxx强力驱动等内容:注释(hexo\themes\hexo-theme-next-5.1.0\layout\_partials\footer.swig)的' if theme.copyright ..... endif '中的内容
+- 去除底部xxxx强力驱动等内容:
+注释(hexo\themes\hexo-theme-next-5.1.0\layout\_partials\footer.swig)的' if theme.copyright ..... endif '中的内容
+- 阅读全文美化,鼠标悬浮颜色和默认按钮颜色互换:
+(hexo\themes\hexo-theme-next-5.1.0\source\css\_variables\base.style)
+$btn-default-hover-bg           = $black-deep
+$btn-default-hover-color        = white
+$btn-default-hover-border-color = $black-deep
+$read-more-color                = $black-deep
+$read-more-bg-color             = white
+注意格式 =后面需要空格
+
 
 ## 官方文档
 - hexo:https://hexo.io/zh-cn/docs/
