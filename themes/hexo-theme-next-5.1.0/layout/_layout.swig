@@ -11,12 +11,21 @@
 {% endif %}
 
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
+  
 <head>
   {% include '_partials/head.swig' %}
   <title>{% block title %}{% endblock %}</title>
 </head>
 
+
 <body itemscope itemtype="http://schema.org/WebPage" lang="{{ page.lang || page.language || config.language }}">
+
+
+
+  {% if theme.canvas_nest %} 
+	<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.1/canvas-nest.min.js"></script>
+  {% endif %}
+
 
   {% include '_scripts/third-party/analytics.swig' %}
 

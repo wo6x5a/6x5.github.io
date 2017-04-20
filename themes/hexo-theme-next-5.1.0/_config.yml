@@ -484,8 +484,10 @@ use_motion: true
 # Fancybox
 fancybox: true
 
-# Canvas-nest
-canvas_nest: false
+# Internal version: 1.0.0
+# https://github.com/hustcc/canvas-nest.js
+canvas_nest: true
+
 
 # Script Vendors.
 # Set a CDN address for the vendor you want to customize.
@@ -533,10 +535,6 @@ vendors:
   # https://www.algolia.com
   algolia_instant_js:
   algolia_instant_css:
-
-  # Internal version: 1.0.0
-  # https://github.com/hustcc/canvas-nest.js
-  canvas_nest:
 
 
 
