@@ -18,6 +18,9 @@ since: 2017
 
 # icon between year and author @Footer
 authoricon: heart
+uvicon: user
+pvicon: eye
+
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
@@ -260,7 +263,7 @@ post_meta:
 post_wordcount:
   item_text: true
   wordcount: true
-  min2read: true
+  min2read: false
 
 # Wechat Subscriber
 #wechat_subscriber:

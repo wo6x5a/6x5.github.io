@@ -26,4 +26,26 @@
 
 -->
 
+
+<div class="powered-by">
+  <span class="with-love">
+    <i class="fa fa-{{ theme.pvicon }}"></i>
+  </span>
+<span id="busuanzi_container_site_pv">
+  浏览量:<span id="busuanzi_value_site_pv"></span>次
+</span>
+</div>
+
+<div class="theme-info">
+  <span class="with-love">
+    <i class="fa fa-{{ theme.uvicon }}"></i>
+  </span>
+<span id="busuanzi_container_site_uv">
+  访问数:<span id="busuanzi_value_site_uv"></span>人
+</span>
+</div>
+
+
+
+
 {% endif %}
