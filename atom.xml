@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wo6x5a.github.io/"/>
-  <updated>2017-04-20T08:28:43.167Z</updated>
+  <updated>2017-04-26T08:07:54.249Z</updated>
   <id>https://wo6x5a.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://wo6x5a.github.io/2017/04/20/hexo%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
     <id>https://wo6x5a.github.io/2017/04/20/hexo的一些小问题/</id>
     <published>2017-04-20T07:33:11.000Z</published>
-    <updated>2017-04-20T08:28:43.167Z</updated>
+    <updated>2017-04-26T08:07:54.249Z</updated>
     
     <content type="html"><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
 <li>hexo clean :清除缓存文件</li>
@@ -31,10 +31,20 @@
 </li>
 </ul>
 <h2 id="美化页面"><a href="#美化页面" class="headerlink" title="美化页面"></a>美化页面</h2><ul>
-<li>next 主题挺好看.</li>
-<li>去除底部xxxx强力驱动等内容:<br>注释(hexo\themes\hexo-theme-next-5.1.0\layout_partials\footer.swig)的’ if theme.copyright ….. endif ‘中的内容</li>
-<li>阅读全文美化,鼠标悬浮颜色和默认按钮颜色互换:<br>(hexo\themes\hexo-theme-next-5.1.0\source\css_variables\base.style)<br>$btn-default-hover-bg           = $black-deep<br>$btn-default-hover-color        = white<br>$btn-default-hover-border-color = $black-deep<br>$read-more-color                = $black-deep<br>$read-more-bg-color             = white<br>注意格式 =后面需要空格</li>
+<li>以下均基于next主题.</li>
+<li><p>去除底部xxxx强力驱动等内容:<br>注释hexo\themes\hexo-theme-next-5.1.0\layout_partials\footer.swig<br>的如下内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;powered-by&quot;&gt;</div><div class="line">  &#123;&#123; __(&apos;footer.powered&apos;, &apos;&lt;a class=&quot;theme-link&quot; href=&quot;https://hexo.io&quot;&gt;Hexo&lt;/a&gt;&apos;) &#125;&#125;</div><div class="line">&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;div class=&quot;theme-info&quot;&gt;</div><div class="line">  &#123;&#123; __(&apos;footer.theme&apos;) &#125;&#125; -</div><div class="line">  &lt;a class=&quot;theme-link&quot; href=&quot;https://github.com/iissnan/hexo-theme-next&quot;&gt;</div><div class="line">    NexT.&#123;&#123; theme.scheme &#125;&#125;</div><div class="line">  &lt;/a&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>阅读全文美化,鼠标悬浮颜色和默认按钮颜色互换:<br>hexo\themes\hexo-theme-next-5.1.0\source\css_variables\base.style</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$btn-default-hover-bg           = $black-deep</div><div class="line">$btn-default-hover-color        = white</div><div class="line">$btn-default-hover-border-color = $black-deep</div><div class="line">$read-more-color                = $black-deep</div><div class="line">$read-more-bg-color             = white</div></pre></td></tr></table></figure>
+</li>
 </ul>
+<p>注意格式 =后面需要空格</p>
+<ul>
+<li>文章卡片添加阴影效果:<br>hexo\themes\hexo-theme-next-5.1.0\source\css_schemes\Muse 添加<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">.posts-expand &#123; </div><div class="line">	.post&#123; </div><div class="line">		margin-top: 60px;</div><div class="line">		margin-bottom: 60px;</div><div class="line">		padding: 25px;</div><div class="line">		-webkit-box-shadow: 0 0 5px rgba(202, 203, 203, .5);</div><div class="line">		-moz-box-shadow: 0 0 5px rgba(202, 203, 204, .5);</div><div class="line">		&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>去除底部多余空白和黑色横线:<br>hexo\themes\hexo-theme-next-5.1.0\source\css_common\components\post\post-eof.styl<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// 注释margin</div><div class="line">//margin: $post-eof-margin-top auto $post-eof-margin-bottom;</div><div class="line">//width 改为 0%</div><div class="line">//width: 8%;</div><div class="line">width: 0%;</div></pre></td></tr></table></figure></p>
 <h2 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a>官方文档</h2><ul>
 <li>hexo:<a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">https://hexo.io/zh-cn/docs/</a></li>
 <li>next:<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">http://theme-next.iissnan.com/</a></li>
