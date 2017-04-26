@@ -2,7 +2,7 @@
 title: mongodb操作日志
 date: 2017-03-27 17:31:47
 tags: [mongodb,nosql]
-categories: 工作
+categories: 技术
 ---
 ```javascript
 // 根据查询结果,替换某个字段的字符串

@@ -2,7 +2,7 @@
 title: grunt安装和使用
 date: 2017-03-27 15:23:15
 tags: gtunt
-categories: 备忘
+categories: 技术
 ---
 ## 安装grunt
 

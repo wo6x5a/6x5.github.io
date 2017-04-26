@@ -2,7 +2,7 @@
 title: hexo的一些小问题
 date: 2017-04-20 15:33:11
 tags: hexo
-categories: 备忘
+categories: 技术
 ---
 
 ## 常用命令

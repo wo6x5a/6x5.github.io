@@ -2,7 +2,7 @@
 title: spring data jpa 查询使用案例
 date: 2017-03-27 17:29:11
 tags: [java,spring data jpa]
-categories: 工作
+categories: 技术
 ---
 
 ```java

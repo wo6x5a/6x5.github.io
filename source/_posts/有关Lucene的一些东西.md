@@ -2,7 +2,7 @@
 title: 有关Lucene的一些东西
 date: 2017-04-11 14:56:50
 tags: Lucene
-categories: 工作
+categories: 技术
 ---
 
 因为项目中用到了Lucene,这里简单的说一下关于Lucene的一些东西.

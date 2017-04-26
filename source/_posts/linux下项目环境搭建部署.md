@@ -2,7 +2,7 @@
 title: linux下项目环境搭建部署
 date: 2017-03-29 14:54:40
 tags: linux
-categories: 备忘
+categories: 技术
 ---
 - centos7安装
     不做展示,自行解决

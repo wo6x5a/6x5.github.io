@@ -2,7 +2,7 @@
 title: eclipse远程debug
 date: 2017-03-27 15:11:43
 tags: eclipse
-categories: 备忘
+categories: 技术
 ---
 
 远程Debug(Jboss-eap-6.2为例):
