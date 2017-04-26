@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wo6x5a.github.io/"/>
-  <updated>2017-04-26T08:25:32.139Z</updated>
+  <updated>2017-04-26T08:44:27.683Z</updated>
   <id>https://wo6x5a.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://wo6x5a.github.io/2017/04/20/hexo%E7%9A%84%E4%B8%80%E4%BA%9B%E5%B0%8F%E9%97%AE%E9%A2%98/"/>
     <id>https://wo6x5a.github.io/2017/04/20/hexo的一些小问题/</id>
     <published>2017-04-20T07:33:11.000Z</published>
-    <updated>2017-04-26T08:25:32.139Z</updated>
+    <updated>2017-04-26T08:44:27.683Z</updated>
     
     <content type="html"><![CDATA[<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><ul>
 <li>hexo clean :清除缓存文件</li>
@@ -62,7 +62,7 @@
     
     </summary>
     
-      <category term="备忘" scheme="https://wo6x5a.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+      <category term="技术" scheme="https://wo6x5a.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
       <category term="hexo" scheme="https://wo6x5a.github.io/tags/hexo/"/>
@@ -74,7 +74,7 @@
     <link href="https://wo6x5a.github.io/2017/04/11/%E6%9C%89%E5%85%B3Lucene%E7%9A%84%E4%B8%80%E4%BA%9B%E4%B8%9C%E8%A5%BF/"/>
     <id>https://wo6x5a.github.io/2017/04/11/有关Lucene的一些东西/</id>
     <published>2017-04-11T06:56:50.000Z</published>
-    <updated>2017-04-12T07:05:55.157Z</updated>
+    <updated>2017-04-26T08:45:10.067Z</updated>
     
     <content type="html"><![CDATA[<p>因为项目中用到了Lucene,这里简单的说一下关于Lucene的一些东西.</p>
 <h2 id="大概介绍"><a href="#大概介绍" class="headerlink" title="大概介绍"></a>大概介绍</h2><p>Lucene 是一个基于 Java 的全文信息检索工具包，它不是一个完整的搜索应用程序，而是为你的应用程序提供索引和搜索功能。Lucene 目前是 Apache Jakarta 家族中的一个开源项目。也是较为流行的基于 Java 开源全文检索工具包。<br><a id="more"></a><br>图 1 表示了搜索应用程序和 Lucene 之间的关系，也反映了利用 Lucene 构建搜索应用程序的流程：<br>图 1. 搜索应用程序和 Lucene 之间的关系<br><img src="/images/有关Lucene的一些东西001.jpg" alt="搜索应用程序和 Lucene 之间的关系"></p>
@@ -102,7 +102,7 @@
     
     </summary>
     
-      <category term="工作" scheme="https://wo6x5a.github.io/categories/%E5%B7%A5%E4%BD%9C/"/>
+      <category term="技术" scheme="https://wo6x5a.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
       <category term="Lucene" scheme="https://wo6x5a.github.io/tags/Lucene/"/>
@@ -114,7 +114,7 @@
     <link href="https://wo6x5a.github.io/2017/04/01/%E7%BC%96%E7%A0%81%E6%95%A3%E8%AE%B0/"/>
     <id>https://wo6x5a.github.io/2017/04/01/编码散记/</id>
     <published>2017-04-01T08:14:23.000Z</published>
-    <updated>2017-04-12T06:42:15.130Z</updated>
+    <updated>2017-04-26T08:44:56.467Z</updated>
     
     <content type="html"><![CDATA[<h2 id="开发习惯"><a href="#开发习惯" class="headerlink" title="开发习惯"></a>开发习惯</h2><ul>
 <li>guava,程序员的好朋友.</li>
@@ -161,7 +161,7 @@
     
     </summary>
     
-      <category term="工作" scheme="https://wo6x5a.github.io/categories/%E5%B7%A5%E4%BD%9C/"/>
+      <category term="其他" scheme="https://wo6x5a.github.io/categories/%E5%85%B6%E4%BB%96/"/>
     
     
       <category term="其他" scheme="https://wo6x5a.github.io/tags/%E5%85%B6%E4%BB%96/"/>
@@ -244,7 +244,7 @@
     <link href="https://wo6x5a.github.io/2017/03/29/linux%E4%B8%8B%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA%E9%83%A8%E7%BD%B2/"/>
     <id>https://wo6x5a.github.io/2017/03/29/linux下项目环境搭建部署/</id>
     <published>2017-03-29T06:54:40.000Z</published>
-    <updated>2017-04-14T02:23:22.246Z</updated>
+    <updated>2017-04-26T08:44:40.362Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li>centos7安装<br>  不做展示,自行解决</li>
@@ -305,7 +305,7 @@
     
     </summary>
     
-      <category term="备忘" scheme="https://wo6x5a.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+      <category term="技术" scheme="https://wo6x5a.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
       <category term="linux" scheme="https://wo6x5a.github.io/tags/linux/"/>
@@ -317,7 +317,7 @@
     <link href="https://wo6x5a.github.io/2017/03/28/%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
     <id>https://wo6x5a.github.io/2017/03/28/常用工具/</id>
     <published>2017-03-28T05:47:17.000Z</published>
-    <updated>2017-03-30T02:38:41.966Z</updated>
+    <updated>2017-04-26T08:45:01.492Z</updated>
     
     <content type="html"><![CDATA[<p><strong>远程连接服务器</strong>: winscp/putty/Xshell</p>
 <p><strong>ftp</strong>: Xftp</p>
@@ -336,7 +336,7 @@
     
     </summary>
     
-      <category term="备忘" scheme="https://wo6x5a.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+      <category term="其他" scheme="https://wo6x5a.github.io/categories/%E5%85%B6%E4%BB%96/"/>
     
     
       <category term="其他" scheme="https://wo6x5a.github.io/tags/%E5%85%B6%E4%BB%96/"/>
@@ -348,7 +348,7 @@
     <link href="https://wo6x5a.github.io/2017/03/27/Linux%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
     <id>https://wo6x5a.github.io/2017/03/27/Linux日常记录/</id>
     <published>2017-03-27T09:37:05.000Z</published>
-    <updated>2017-04-11T09:30:11.592Z</updated>
+    <updated>2017-04-26T08:44:36.115Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><p>linux开机启动服务目录:/etc/init.d</p>
@@ -534,7 +534,7 @@
     
     </summary>
     
-      <category term="备忘" scheme="https://wo6x5a.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+      <category term="技术" scheme="https://wo6x5a.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
       <category term="linux" scheme="https://wo6x5a.github.io/tags/linux/"/>
@@ -546,7 +546,7 @@
     <link href="https://wo6x5a.github.io/2017/03/27/mongodb%E6%93%8D%E4%BD%9C%E6%97%A5%E5%BF%97/"/>
     <id>https://wo6x5a.github.io/2017/03/27/mongodb操作日志/</id>
     <published>2017-03-27T09:31:47.000Z</published>
-    <updated>2017-04-11T09:31:49.761Z</updated>
+    <updated>2017-04-26T08:44:44.459Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 根据查询结果,替换某个字段的字符串</span></div><div class="line"></div><div class="line"><span class="comment">// 模糊查询vcPicUrl中有'http:'字段的结果</span></div><div class="line"><span class="keyword">var</span> list = db.getCollection(<span class="string">'tbArticle'</span>).find(&#123;<span class="string">"vcPicUrl"</span>:<span class="regexp">/http:/</span>&#125;);</div><div class="line"><span class="comment">// var index = 0;</span></div><div class="line"><span class="comment">// list.toArray();</span></div><div class="line"><span class="comment">// while(list.hasNext())&#123;</span></div><div class="line"><span class="comment">//         var url = list[index].vcPicUrl;</span></div><div class="line"><span class="comment">//         print(url);</span></div><div class="line"><span class="comment">//         var rurl = url.replace('http:','https:');</span></div><div class="line"><span class="comment">//         print(rurl);</span></div><div class="line"><span class="comment">//         db.getCollection('tbArticle').update(&#123;"_id":list[index]._id&#125;, &#123;$set:&#123;'vcPicUrl':rurl&#125;&#125;);</span></div><div class="line"><span class="comment">//         index=index+1;</span></div><div class="line"><span class="comment">//     &#125;</span></div><div class="line">print(list.length());</div><div class="line"><span class="comment">// 将vcPicUrl中的http: 替换成 https:</span></div><div class="line"> <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; list.length(); i++) &#123;</div><div class="line">        <span class="keyword">var</span> article = list[i];</div><div class="line">        <span class="keyword">var</span> url = article.vcPicUrl;</div><div class="line">        <span class="keyword">var</span> rurl = url.replace(<span class="string">'http:'</span>,<span class="string">'https:'</span>);</div><div class="line">        db.getCollection(<span class="string">'tbArticle'</span>).update(&#123;<span class="string">"_id"</span>:article._id&#125;, &#123;<span class="attr">$set</span>:&#123;<span class="string">'vcPicUrl'</span>:rurl&#125;&#125;);</div><div class="line">     &#125;</div><div class="line">     print(<span class="string">"success"</span>)</div></pre></td></tr></table></figure>]]></content>
     
@@ -556,7 +556,7 @@
     
     </summary>
     
-      <category term="工作" scheme="https://wo6x5a.github.io/categories/%E5%B7%A5%E4%BD%9C/"/>
+      <category term="技术" scheme="https://wo6x5a.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
       <category term="mongodb" scheme="https://wo6x5a.github.io/tags/mongodb/"/>
@@ -570,7 +570,7 @@
     <link href="https://wo6x5a.github.io/2017/03/27/spring-data-jpa-%E6%9F%A5%E8%AF%A2%E4%BD%BF%E7%94%A8%E6%A1%88%E4%BE%8B/"/>
     <id>https://wo6x5a.github.io/2017/03/27/spring-data-jpa-查询使用案例/</id>
     <published>2017-03-27T09:29:11.000Z</published>
-    <updated>2017-04-11T09:33:43.632Z</updated>
+    <updated>2017-04-26T08:44:48.684Z</updated>
     
     <content type="html"><![CDATA[<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/**</span></div><div class="line"> * </div><div class="line"> */</div><div class="line"><span class="function"><span class="keyword">public</span> String <span class="title">getSumAmount</span><span class="params">(<span class="keyword">final</span> AcctDtlSearchDto searchDto, <span class="keyword">final</span> ERecvPayFlag recvPayFlag)</span> </span>&#123;  </div><div class="line">	String startDate = searchDto.getStartDate();                                                </div><div class="line">	String endDate = searchDto.getEndDate();                                                    </div><div class="line">	EUseType useType = searchDto.getUseType();                                                  </div><div class="line">	CriteriaBuilder builder = em.getCriteriaBuilder();                                          </div><div class="line">	CriteriaQuery&lt;BigDecimal&gt; query = builder.createQuery(BigDecimal.class);                    </div><div class="line">	Root&lt;SubAcctTrxJnlPo&gt; root = query.from(SubAcctTrxJnlPo.class);                             </div><div class="line">	Predicate predicate = builder.conjunction();                                                </div><div class="line">	List&lt;Expression&lt;Boolean&gt;&gt; expressions = predicate.getExpressions();                         </div><div class="line">	Expression&lt;BigDecimal&gt; sumTrxAmt = builder.sum(root.&lt;BigDecimal&gt; get(<span class="string">"trxAmt"</span>));            </div><div class="line">	<span class="keyword">if</span> (StringUtils.isNotBlank(startDate)) &#123;                                                    </div><div class="line">		expressions.add(builder.greaterThanOrEqualTo(root.&lt;String&gt; get(<span class="string">"trxDate"</span>), startDate)); </div><div class="line">	&#125;                                                                                           </div><div class="line">	<span class="keyword">if</span> (StringUtils.isNotBlank(endDate)) &#123;                                                      </div><div class="line">		expressions.add(builder.lessThanOrEqualTo(root.&lt;String&gt; get(<span class="string">"trxDate"</span>), endDate));      </div><div class="line">	&#125;                                                                                           </div><div class="line">	<span class="keyword">if</span> (EUseType.ALL != useType) &#123;                                                              </div><div class="line">		expressions.add(builder.equal(root.&lt;EUseType&gt; get(<span class="string">"useType"</span>), useType));                </div><div class="line">	&#125;                                                                                           </div><div class="line">	<span class="keyword">if</span> (<span class="keyword">null</span> != recvPayFlag) &#123;                                                                  </div><div class="line">		expressions.add(builder.equal(root.&lt;ERecvPayFlag&gt; get(<span class="string">"recvPayFlag"</span>), recvPayFlag));    </div><div class="line">	&#125;                                                                                           </div><div class="line">	query.where(predicate);                                                                     </div><div class="line">	query.select(sumTrxAmt);                                                                    </div><div class="line">	BigDecimal result = em.createQuery(query).getSingleResult();                                </div><div class="line">	result = (<span class="keyword">null</span> == result ? BigDecimal.ZERO : result);                                       </div><div class="line">	<span class="keyword">return</span> result.toString();                                                                   </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -582,7 +582,7 @@
     
     </summary>
     
-      <category term="工作" scheme="https://wo6x5a.github.io/categories/%E5%B7%A5%E4%BD%9C/"/>
+      <category term="技术" scheme="https://wo6x5a.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
       <category term="java" scheme="https://wo6x5a.github.io/tags/java/"/>
@@ -789,7 +789,7 @@
     <link href="https://wo6x5a.github.io/2017/03/27/grunt%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8/"/>
     <id>https://wo6x5a.github.io/2017/03/27/grunt安装和使用/</id>
     <published>2017-03-27T07:23:15.000Z</published>
-    <updated>2017-04-11T09:29:44.000Z</updated>
+    <updated>2017-04-26T08:44:21.610Z</updated>
     
     <content type="html"><![CDATA[<h2 id="安装grunt"><a href="#安装grunt" class="headerlink" title="安装grunt"></a>安装grunt</h2><p>Grunt运行离不开NodeJS和NPM。因此要使用Grunt首要的条件，你的系统需要安装NodeJS和NPM。<br><a id="more"></a> </p>
 <blockquote>
@@ -850,7 +850,7 @@
     
     </summary>
     
-      <category term="备忘" scheme="https://wo6x5a.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+      <category term="技术" scheme="https://wo6x5a.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
       <category term="gtunt" scheme="https://wo6x5a.github.io/tags/gtunt/"/>
@@ -862,7 +862,7 @@
     <link href="https://wo6x5a.github.io/2017/03/27/eclipse%E8%BF%9C%E7%A8%8Bdebug/"/>
     <id>https://wo6x5a.github.io/2017/03/27/eclipse远程debug/</id>
     <published>2017-03-27T07:11:43.000Z</published>
-    <updated>2017-04-11T09:34:51.433Z</updated>
+    <updated>2017-04-26T08:44:14.458Z</updated>
     
     <content type="html"><![CDATA[<p>远程Debug(Jboss-eap-6.2为例):</p>
 <p>服务器:</p>
@@ -887,7 +887,7 @@
     
     </summary>
     
-      <category term="备忘" scheme="https://wo6x5a.github.io/categories/%E5%A4%87%E5%BF%98/"/>
+      <category term="技术" scheme="https://wo6x5a.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
       <category term="eclipse" scheme="https://wo6x5a.github.io/tags/eclipse/"/>
