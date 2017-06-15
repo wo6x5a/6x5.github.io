@@ -348,7 +348,7 @@
     <link href="https://wo6x5a.github.io/2017/03/27/Linux%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
     <id>https://wo6x5a.github.io/2017/03/27/Linux日常记录/</id>
     <published>2017-03-27T09:37:05.000Z</published>
-    <updated>2017-04-26T08:44:36.115Z</updated>
+    <updated>2017-06-15T03:02:33.678Z</updated>
     
     <content type="html"><![CDATA[<ul>
 <li><p>linux开机启动服务目录:/etc/init.d</p>
@@ -376,9 +376,10 @@
 <p> rm -r /home/test</p>
 <p>3、-r是递归的删除参数表中的目录及其子目录。 目录将被清空并且删除。 当删除目录包含的具有写保护的文件时用户通常是被提示的。</p>
 <p>rm -rf /home/test</p>
-<p>-4、f是不提示用户，删除目录下的所有文件。请注意检查路径，输成别的目录就悲剧了。</p>
+<p>4、f是不提示用户，删除目录下的所有文件。请注意检查路径，输成别的目录就悲剧了。</p>
 <p> rm -ir /home/test</p>
 <p>5、-i是交互模式。使用这个选项，rm命令在删除任何文件前提示用户确认。</p>
+<p>6、tail -f xxxx.xxx 打开文件持续输出(看实时日志)</p>
 <ul>
 <li>Yum软件仓库</li>
 </ul>
