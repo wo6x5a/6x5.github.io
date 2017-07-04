@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wo6x5a.github.io/"/>
-  <updated>2017-07-04T06:37:02.061Z</updated>
+  <updated>2017-07-04T06:42:39.966Z</updated>
   <id>https://wo6x5a.github.io/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="https://wo6x5a.github.io/2017/07/04/Spring%E5%AE%B9%E5%99%A8%E5%90%AF%E5%8A%A8%E7%9B%B8%E5%85%B3/"/>
     <id>https://wo6x5a.github.io/2017/07/04/Spring容器启动相关/</id>
     <published>2017-07-04T06:21:55.000Z</published>
-    <updated>2017-07-04T06:37:02.061Z</updated>
+    <updated>2017-07-04T06:42:39.966Z</updated>
     
     <content type="html"><![CDATA[<p>前几天去面试,被问到spring容器的启动,发现是我的盲区,回来赶紧填坑.</p>
 <h2 id="手动启动IOC"><a href="#手动启动IOC" class="headerlink" title="手动启动IOC"></a>手动启动IOC</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ClassPathResource resource = <span class="keyword">new</span> ClassPathResource(<span class="string">"bean.xml"</span>);  </div><div class="line">DefaultListableBeanFactory factory = <span class="keyword">new</span> DefaultListableBeanFactory();  </div><div class="line">XmlBeanDefinitionReader reader = <span class="keyword">new</span> XmlBeanDefinitionReader(factory);  </div><div class="line">reader.loadBeanDefinitions(resource);</div></pre></td></tr></table></figure>
+<a id="more"></a> 
 <p>第一行代码：ClassPathResource的作用是起到了资源定位的作用。通常情况下，spring的配置信息使用文件来描述，通过这样一行代码，指明了需要加载的资源的位置，并且使用Spring能够理解的Resource接口的形式将资源描述出来。<br>第二行代码：DefaultListableBeanFactory是一个纯粹的IoC容器类，它是这个Spring的一个基础的IoC容器类，其他的一个IoC容器都是以这个类为基础进行扩展的。这样代码只是定义了一个IoC容器，它不具有任何其他的能力。<br>第三行代码：XmlBeanDefinitionReader是一个配置文件读取器。它实现了BeanDefinitionReader接口，它能够按照Spring配置文件，将其中的配置信息转换为spring内部可以识别的信息（BeanDefinition）。注意，在这里它的构造函数需要一个BeanDefinitionRegistry类型的参数，BeanDefinitionRegistry接口提供了一个回调函数，通过这个回调函数可以向IoC容器注册bean的定义信息。DefaultListableBeanFactory实现了这个接口。<br>第四行代码：调用loadeBeanDefinitions方法，通过给定的Resource资源，从中读取出spring的配置信息，转换为BeanDefinition，然后再调用BeanDefinitionRegistry的回调函数进行注册。<br>通过以上的四行代码，完成了spring容器的启动。</p>
 <h2 id="容器启动过程"><a href="#容器启动过程" class="headerlink" title="容器启动过程"></a>容器启动过程</h2><ol>
 <li>定位<br>在spring中，使用统一的资源表现方式Resource。根据不同的情况进行不同的选择。上述程序中，采用了编程式的资源定位方法，使用ClassPathResource定位位于classpath下的资源文件。</li>
@@ -36,7 +37,7 @@
     <summary type="html">
     
       &lt;p&gt;前几天去面试,被问到spring容器的启动,发现是我的盲区,回来赶紧填坑.&lt;/p&gt;
-&lt;h2 id=&quot;手动启动IOC&quot;&gt;&lt;a href=&quot;#手动启动IOC&quot; class=&quot;headerlink&quot; title=&quot;手动启动IOC&quot;&gt;&lt;/a&gt;手动启动IOC&lt;/h2&gt;&lt;figure 
+&lt;h2 id=&quot;手动启动IOC&quot;&gt;&lt;a href=&quot;#手动启动IOC&quot; class=&quot;headerlink&quot; title=&quot;手动启动IOC&quot;&gt;&lt;/a&gt;手动启动IOC&lt;/h2&gt;&lt;figure class=&quot;highlight java&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ClassPathResource resource = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; ClassPathResource(&lt;span class=&quot;string&quot;&gt;&quot;bean.xml&quot;&lt;/span&gt;);  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;DefaultListableBeanFactory factory = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; DefaultListableBeanFactory();  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;XmlBeanDefinitionReader reader = &lt;span class=&quot;keyword&quot;&gt;new&lt;/span&gt; XmlBeanDefinitionReader(factory);  &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;reader.loadBeanDefinitions(resource);&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
     
     </summary>
     

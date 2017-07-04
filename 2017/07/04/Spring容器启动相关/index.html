@@ -103,7 +103,7 @@
 <meta property="og:site_name" content="6x5">
 <meta property="og:description" content="前几天去面试,被问到spring容器的启动,发现是我的盲区,回来赶紧填坑.
 手动启动IOC1234ClassPathResource resource = new ClassPathResource(&quot;bean.xml&quot;);  DefaultListableBeanFactory factory = new DefaultListableBeanFactory();  XmlBeanDefinit">
-<meta property="og:updated_time" content="2017-07-04T06:37:02.061Z">
+<meta property="og:updated_time" content="2017-07-04T06:42:39.966Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring容器启动相关">
 <meta name="twitter:description" content="前几天去面试,被问到spring容器的启动,发现是我的盲区,回来赶紧填坑.
@@ -463,6 +463,7 @@
       
         <p>前几天去面试,被问到spring容器的启动,发现是我的盲区,回来赶紧填坑.</p>
 <h2 id="手动启动IOC"><a href="#手动启动IOC" class="headerlink" title="手动启动IOC"></a>手动启动IOC</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ClassPathResource resource = <span class="keyword">new</span> ClassPathResource(<span class="string">"bean.xml"</span>);  </div><div class="line">DefaultListableBeanFactory factory = <span class="keyword">new</span> DefaultListableBeanFactory();  </div><div class="line">XmlBeanDefinitionReader reader = <span class="keyword">new</span> XmlBeanDefinitionReader(factory);  </div><div class="line">reader.loadBeanDefinitions(resource);</div></pre></td></tr></table></figure>
+<a id="more"></a> 
 <p>第一行代码：ClassPathResource的作用是起到了资源定位的作用。通常情况下，spring的配置信息使用文件来描述，通过这样一行代码，指明了需要加载的资源的位置，并且使用Spring能够理解的Resource接口的形式将资源描述出来。<br>第二行代码：DefaultListableBeanFactory是一个纯粹的IoC容器类，它是这个Spring的一个基础的IoC容器类，其他的一个IoC容器都是以这个类为基础进行扩展的。这样代码只是定义了一个IoC容器，它不具有任何其他的能力。<br>第三行代码：XmlBeanDefinitionReader是一个配置文件读取器。它实现了BeanDefinitionReader接口，它能够按照Spring配置文件，将其中的配置信息转换为spring内部可以识别的信息（BeanDefinition）。注意，在这里它的构造函数需要一个BeanDefinitionRegistry类型的参数，BeanDefinitionRegistry接口提供了一个回调函数，通过这个回调函数可以向IoC容器注册bean的定义信息。DefaultListableBeanFactory实现了这个接口。<br>第四行代码：调用loadeBeanDefinitions方法，通过给定的Resource资源，从中读取出spring的配置信息，转换为BeanDefinition，然后再调用BeanDefinitionRegistry的回调函数进行注册。<br>通过以上的四行代码，完成了spring容器的启动。</p>
 <h2 id="容器启动过程"><a href="#容器启动过程" class="headerlink" title="容器启动过程"></a>容器启动过程</h2><ol>
 <li>定位<br>在spring中，使用统一的资源表现方式Resource。根据不同的情况进行不同的选择。上述程序中，采用了编程式的资源定位方法，使用ClassPathResource定位位于classpath下的资源文件。</li>
