@@ -101,7 +101,7 @@
 <meta property="og:url" content="https://wo6x5a.github.io/2017/07/04/spring-IOC-AOP/index.html">
 <meta property="og:site_name" content="6x5">
 <meta property="og:description" content="spring用了这么久,发现自己对这俩了解的并没有非常深刻,故填坑.">
-<meta property="og:updated_time" content="2017-07-04T08:49:09.116Z">
+<meta property="og:updated_time" content="2017-07-04T08:49:53.020Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="spring IoC AOP">
 <meta name="twitter:description" content="spring用了这么久,发现自己对这俩了解的并没有非常深刻,故填坑.">
@@ -473,13 +473,10 @@
 <li>切点标志符(designator)：execution、within、this 与 target、bean、args、@annotation；</li>
 <li>AOP代理对象生成:JDK动态代理和CGLib代理。CGLib所创建的动态代理对象的性能比JDK所创建的代理对象性能高不少，大概10倍，但CGLib在创建代理对象时所花费的时间却比JDK动态代理多大概8倍，所以对于singleton的代理对象或者具有实例池的代理，因为无需频繁的创建新的实例，所以比较适合CGLib动态代理技术，反之则适用于JDK动态代理技术。另外，由于CGLib采用动态创建子类的方式生成代理对象，所以不能对目标类中的final，private等方法进行处理。所以，大家需要根据实际的情况选择使用什么样的代理了。同样的，Spring的AOP编程中相关的ProxyFactory代理工厂内部就是使用JDK动态代理或CGLib动态代理的，通过动态代理，将增强（advice)应用到目标类中。</li>
 </ul>
-<ul>
-<li>使用AOP<br>可以通过配置文件或者编程的方式来使用Spring AOP。</li>
-</ul>
+<h1 id="使用AOP"><a href="#使用AOP" class="headerlink" title="使用AOP"></a>使用AOP</h1><p>可以通过配置文件或者编程的方式来使用Spring AOP。</p>
 <p>配置可以通过xml文件来进行，大概有四种方式：<br>1.配置ProxyFactoryBean，显式地设置advisors, advice, target等<br>2.配置AutoProxyCreator，这种方式下，还是如以前一样使用定义的bean，但是从容器中获得的其实已经是代理对象<br>3.通过<aop:config>来配置<br>4.通过<aop: aspectj-autoproxy="">来配置，使用AspectJ的注解来标识通知及切入点</aop:></aop:config></p>
 <p>也可以直接使用ProxyFactory来以编程的方式使用Spring AOP，通过ProxyFactory提供的方法可以设置target对象, advisor等相关配置，最终通过 getProxy()方法来获取代理对象</p>
-<ul>
-<li>AOP使用场景</li>
+<h1 id="AOP使用场景"><a href="#AOP使用场景" class="headerlink" title="AOP使用场景"></a>AOP使用场景</h1><ul>
 <li>Authentication 权限</li>
 <li>Caching 缓存</li>
 <li>Context passing 内容传递</li>
@@ -708,7 +705,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IoC"><span class="nav-number">1.</span> <span class="nav-text">IoC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP"><span class="nav-number">2.</span> <span class="nav-text">AOP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AOP相关概念"><span class="nav-number"></span> <span class="nav-text">AOP相关概念</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IoC"><span class="nav-number">1.</span> <span class="nav-text">IoC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AOP"><span class="nav-number">2.</span> <span class="nav-text">AOP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AOP相关概念"><span class="nav-number"></span> <span class="nav-text">AOP相关概念</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用AOP"><span class="nav-number"></span> <span class="nav-text">使用AOP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#AOP使用场景"><span class="nav-number"></span> <span class="nav-text">AOP使用场景</span></a></div>
             
 
           </div>
