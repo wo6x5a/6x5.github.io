@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="linux," />
+  <meta name="keywords" content="spring,java," />
 
 
 
@@ -95,31 +95,19 @@
 
 
 
-<meta name="description" content="centos7安装  不做展示,自行解决
-数据库安装:
-  1yum install mariadb mariadb-server
-
-启动mariadb服务程序并添加到开机启动项中：
-12[root@linuxprobe ~]# systemctl start mariadb[root@linuxprobe ~]# systemctl enable mariadb">
+<meta name="description" content="前几天去面试,被问到spring容器的启动,发现是我的盲区,回来赶紧填坑.
+手动启动IOC1234ClassPathResource resource = new ClassPathResource(&quot;bean.xml&quot;);  DefaultListableBeanFactory factory = new DefaultListableBeanFactory();  XmlBeanDefinit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux下项目环境搭建部署">
-<meta property="og:url" content="https://wo6x5a.github.io/2017/03/29/linux下项目环境搭建部署/index.html">
+<meta property="og:title" content="Spring容器启动相关">
+<meta property="og:url" content="https://wo6x5a.github.io/2017/07/04/Spring容器启动相关/index.html">
 <meta property="og:site_name" content="6x5">
-<meta property="og:description" content="centos7安装  不做展示,自行解决
-数据库安装:
-  1yum install mariadb mariadb-server
-
-启动mariadb服务程序并添加到开机启动项中：
-12[root@linuxprobe ~]# systemctl start mariadb[root@linuxprobe ~]# systemctl enable mariadb">
-<meta property="og:updated_time" content="2017-04-26T08:44:40.362Z">
+<meta property="og:description" content="前几天去面试,被问到spring容器的启动,发现是我的盲区,回来赶紧填坑.
+手动启动IOC1234ClassPathResource resource = new ClassPathResource(&quot;bean.xml&quot;);  DefaultListableBeanFactory factory = new DefaultListableBeanFactory();  XmlBeanDefinit">
+<meta property="og:updated_time" content="2017-07-04T06:37:02.061Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="linux下项目环境搭建部署">
-<meta name="twitter:description" content="centos7安装  不做展示,自行解决
-数据库安装:
-  1yum install mariadb mariadb-server
-
-启动mariadb服务程序并添加到开机启动项中：
-12[root@linuxprobe ~]# systemctl start mariadb[root@linuxprobe ~]# systemctl enable mariadb">
+<meta name="twitter:title" content="Spring容器启动相关">
+<meta name="twitter:description" content="前几天去面试,被问到spring容器的启动,发现是我的盲区,回来赶紧填坑.
+手动启动IOC1234ClassPathResource resource = new ClassPathResource(&quot;bean.xml&quot;);  DefaultListableBeanFactory factory = new DefaultListableBeanFactory();  XmlBeanDefinit">
 
 
 
@@ -147,13 +135,13 @@
 
 
 
-  <link rel="canonical" href="https://wo6x5a.github.io/2017/03/29/linux下项目环境搭建部署/"/>
+  <link rel="canonical" href="https://wo6x5a.github.io/2017/07/04/Spring容器启动相关/"/>
 
 
 
 
 
-  <title> linux下项目环境搭建部署 | 6x5 </title>
+  <title> Spring容器启动相关 | 6x5 </title>
 </head>
 
 
@@ -340,7 +328,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="https://wo6x5a.github.io/2017/03/29/linux下项目环境搭建部署/">
+    <link itemprop="mainEntityOfPage" href="https://wo6x5a.github.io/2017/07/04/Spring容器启动相关/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="6x5">
@@ -361,7 +349,7 @@
             
             
               
-                linux下项目环境搭建部署
+                Spring容器启动相关
               
             
           </h1>
@@ -376,8 +364,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-29T14:54:40+08:00">
-                2017-03-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T14:21:55+08:00">
+                2017-07-04
               </time>
             
 
@@ -417,7 +405,7 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a class="cloud-tie-join-count" href="/2017/03/29/linux下项目环境搭建部署/#comments" itemprop="discussionUrl">
+                <a class="cloud-tie-join-count" href="/2017/07/04/Spring容器启动相关/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count join-count" itemprop="commentCount"></span>
                 </a>
               </span>
@@ -426,7 +414,7 @@
 
           
           
-             <span id="/2017/03/29/linux下项目环境搭建部署/" class="leancloud_visitors" data-flag-title="linux下项目环境搭建部署">
+             <span id="/2017/07/04/Spring容器启动相关/" class="leancloud_visitors" data-flag-title="Spring容器启动相关">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -450,7 +438,7 @@
                     <span class="post-meta-item-text">字数统计</span>
                   
                     <span title="字数统计" }}">
-                      625
+                      685
                     </span>
               
 
@@ -473,51 +461,15 @@
       
 
       
-        <ul>
-<li>centos7安装<br>  不做展示,自行解决</li>
-<li><p>数据库安装:</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install mariadb mariadb-server</div></pre></td></tr></table></figure>
-<ol>
-<li><p>启动mariadb服务程序并添加到开机启动项中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[root@linuxprobe ~]# systemctl start mariadb</div><div class="line">[root@linuxprobe ~]# systemctl enable mariadb</div></pre></td></tr></table></figure>
-<a id="more"></a> </li>
-<li><p>为了保证数据库的安全性，一定要进行初始化工作：</p>
-<p>第1步：设定root用户密码。<br>第2步：删除匿名帐号。<br>第3步：禁止root用户从远程登陆。<br>第4步：删除test数据库并取消对其的访问权限。<br>第5步：刷新授权表，让初始化后的设定立即生效。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">[root@linuxprobe ~]# mysql_secure_installation</div><div class="line">Enter current password for root (enter for none): 当前数据库密码为空，直接敲击回车。</div><div class="line">Set root password? [Y/n] y</div><div class="line">New password: 输入要为root用户设置的数据库密码。</div><div class="line">Re-enter new password: 重复再输入一次密码。</div><div class="line">Password updated successfully!</div><div class="line">Remove anonymous users? [Y/n] y（删除匿名帐号）</div><div class="line"> ... Success!</div><div class="line">Disallow root login remotely? [Y/n] y(禁止root用户从远程登陆)</div><div class="line"> ... Success!</div><div class="line">Remove test database and access to it? [Y/n] y(删除test数据库并取消对其的访问权限)</div><div class="line"> - Dropping test database...</div><div class="line"> ... Success!</div><div class="line"> - Removing privileges on test database...</div><div class="line"> ... Success!</div><div class="line">Reload privilege tables now? [Y/n] y(刷新授权表，让初始化后的设定立即生效)</div><div class="line"> ... Success!</div></pre></td></tr></table></figure>
-</li>
-<li><p>设置防火墙对数据库服务的允许策略：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@linuxprobe ~]# firewall-cmd --permanent --add-service=mysql</div><div class="line">success</div><div class="line">[root@linuxprobe ~]# firewall-cmd --reload</div><div class="line">success</div></pre></td></tr></table></figure>
-</li>
-<li><p>使用root用户登陆到数据库中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[root@linuxprobe ~]# mysql -u root -p</div><div class="line">Enter password: 此处输入root用户在数据库中的密码。</div><div class="line">Welcome to the MariaDB monitor. Commands end with ; or \g.</div></pre></td></tr></table></figure>
-</li>
-<li><p>创建一个新的数据库用户：</p>
-<p>创建数据库用户的命令:CREATE USER 用户名@主机名 IDENTIFIED BY ‘密码’;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">MariaDB [(none)]&gt; create user &apos;herakles&apos;@&apos;%&apos; IDENTIFIED BY &apos;123456&apos;;</div><div class="line">Query OK, 0 rows affected (0.00 sec)</div></pre></td></tr></table></figure>
-<p>‘%’允许远程登陆此用户</p>
-</li>
-<li>给予herakles用户对user表单的查询、更新、删除、插入权限：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">MariaDB [mysql]&gt; GRANT SELECT,UPDATE,DELETE,INSERT on mysql.user to luke@localhost;</div><div class="line">Query OK, 0 rows affected (0.00 sec)</div></pre></td></tr></table></figure>
-</li>
+        <p>前几天去面试,被问到spring容器的启动,发现是我的盲区,回来赶紧填坑.</p>
+<h2 id="手动启动IOC"><a href="#手动启动IOC" class="headerlink" title="手动启动IOC"></a>手动启动IOC</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ClassPathResource resource = <span class="keyword">new</span> ClassPathResource(<span class="string">"bean.xml"</span>);  </div><div class="line">DefaultListableBeanFactory factory = <span class="keyword">new</span> DefaultListableBeanFactory();  </div><div class="line">XmlBeanDefinitionReader reader = <span class="keyword">new</span> XmlBeanDefinitionReader(factory);  </div><div class="line">reader.loadBeanDefinitions(resource);</div></pre></td></tr></table></figure>
+<p>第一行代码：ClassPathResource的作用是起到了资源定位的作用。通常情况下，spring的配置信息使用文件来描述，通过这样一行代码，指明了需要加载的资源的位置，并且使用Spring能够理解的Resource接口的形式将资源描述出来。<br>第二行代码：DefaultListableBeanFactory是一个纯粹的IoC容器类，它是这个Spring的一个基础的IoC容器类，其他的一个IoC容器都是以这个类为基础进行扩展的。这样代码只是定义了一个IoC容器，它不具有任何其他的能力。<br>第三行代码：XmlBeanDefinitionReader是一个配置文件读取器。它实现了BeanDefinitionReader接口，它能够按照Spring配置文件，将其中的配置信息转换为spring内部可以识别的信息（BeanDefinition）。注意，在这里它的构造函数需要一个BeanDefinitionRegistry类型的参数，BeanDefinitionRegistry接口提供了一个回调函数，通过这个回调函数可以向IoC容器注册bean的定义信息。DefaultListableBeanFactory实现了这个接口。<br>第四行代码：调用loadeBeanDefinitions方法，通过给定的Resource资源，从中读取出spring的配置信息，转换为BeanDefinition，然后再调用BeanDefinitionRegistry的回调函数进行注册。<br>通过以上的四行代码，完成了spring容器的启动。</p>
+<h2 id="容器启动过程"><a href="#容器启动过程" class="headerlink" title="容器启动过程"></a>容器启动过程</h2><ol>
+<li>定位<br>在spring中，使用统一的资源表现方式Resource。根据不同的情况进行不同的选择。上述程序中，采用了编程式的资源定位方法，使用ClassPathResource定位位于classpath下的资源文件。</li>
+<li>加载<br>在加载这个过程中，主要工作是读取spring配置文件，解析配置文件中的内容，将这些信息转换成为Spring内容可以理解、使用的BeanDefinition。</li>
+<li>注册<br>加载过配置文件后，就将BeanDefinition信息注册到BeanDefinitionRegistry中，通常情况下Spring容器的实现类都实现这个接口。</li>
 </ol>
-</li>
-</ul>
-<ul>
-<li><p>redis</p>
-<p>  安装必要包</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install gcc</div></pre></td></tr></table></figure>
-<p>  安装redis</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">#下载</div><div class="line">wget http://download.redis.io/releases/redis-3.0.0.tar.gz</div><div class="line">tar zxvf redis-3.0.0.tar.gz</div><div class="line">cd redis-3.0.0</div><div class="line">#如果不加参数,linux下会报错</div><div class="line">make MALLOC=libc</div></pre></td></tr></table></figure>
-<p>  启动</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">#启动redis</div><div class="line">src/redis-server &amp;</div><div class="line">(/home/chenwulou/redis-3.2.4/src/redis-server /home/chenwulou/redis-3.2.4/redis.conf &amp;&gt;/dev/null &amp;)</div><div class="line">#关闭redis</div><div class="line">src/redis-cli shutdown</div></pre></td></tr></table></figure>
-<p>  测试</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ src/redis-cli</div><div class="line">127.0.0.1:6379&gt; set foo bar</div><div class="line">OK</div><div class="line">127.0.0.1:6379&gt; get foo</div><div class="line">&quot;bar&quot;</div><div class="line">$</div></pre></td></tr></table></figure>
-</li>
-<li><p>MongoDB</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">yum install -y mongodb-org</div></pre></td></tr></table></figure>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">mongodb服务使用</div><div class="line"></div><div class="line">#启动</div><div class="line">service mongod start</div><div class="line">#停止</div><div class="line">service mongod stop</div><div class="line">#重启</div><div class="line">service mongod restart</div><div class="line">#增加开机启动</div><div class="line">chkconfig mongod on</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>未完待续…</p>
+<h2 id="资源加载实现"><a href="#资源加载实现" class="headerlink" title="资源加载实现"></a>资源加载实现</h2><p>直接上XmlBeanDefinitionReader中的loadBeanDefinitions方法的实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">loadBeanDefinitions</span><span class="params">(EncodedResource encodedResource)</span> <span class="keyword">throws</span> BeanDefinitionStoreException </span>&#123;  </div><div class="line">        Assert.notNull(encodedResource, <span class="string">"EncodedResource must not be null"</span>);  </div><div class="line">        <span class="keyword">if</span> (logger.isInfoEnabled()) &#123;  </div><div class="line">            logger.info(<span class="string">"Loading XML bean definitions from "</span> + encodedResource.getResource());  </div><div class="line">        &#125;  </div><div class="line">        Set&lt;EncodedResource&gt; currentResources = <span class="keyword">this</span>.resourcesCurrentlyBeingLoaded.get();  </div><div class="line">        <span class="keyword">if</span> (currentResources == <span class="keyword">null</span>) &#123;  </div><div class="line">            currentResources = <span class="keyword">new</span> HashSet&lt;EncodedResource&gt;(<span class="number">4</span>);  </div><div class="line">            <span class="keyword">this</span>.resourcesCurrentlyBeingLoaded.set(currentResources);  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">if</span> (!currentResources.add(encodedResource)) &#123;  </div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> BeanDefinitionStoreException(  </div><div class="line">                    <span class="string">"Detected cyclic loading of "</span> + encodedResource + <span class="string">" - check your import definitions!"</span>);  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">try</span> &#123;  </div><div class="line">            InputStream inputStream = encodedResource.getResource().getInputStream();  </div><div class="line">            <span class="keyword">try</span> &#123;  </div><div class="line">                InputSource inputSource = <span class="keyword">new</span> InputSource(inputStream);  </div><div class="line">                <span class="keyword">if</span> (encodedResource.getEncoding() != <span class="keyword">null</span>) &#123;  </div><div class="line">                    inputSource.setEncoding(encodedResource.getEncoding());  </div><div class="line">                &#125;  </div><div class="line">                <span class="keyword">return</span> doLoadBeanDefinitions(inputSource, encodedResource.getResource());  </div><div class="line">            &#125;  </div><div class="line">            <span class="keyword">finally</span> &#123;  </div><div class="line">                inputStream.close();  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">catch</span> (IOException ex) &#123;  </div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> BeanDefinitionStoreException(  </div><div class="line">                    <span class="string">"IOException parsing XML document from "</span> + encodedResource.getResource(), ex);  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">finally</span> &#123;  </div><div class="line">            currentResources.remove(encodedResource);  </div><div class="line">            <span class="keyword">if</span> (currentResources.isEmpty()) &#123;  </div><div class="line">                <span class="keyword">this</span>.resourcesCurrentlyBeingLoaded.set(<span class="keyword">null</span>);  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -541,7 +493,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/linux/" rel="tag"># linux</a>
+            <a href="/tags/spring/" rel="tag"># spring</a>
+          
+            <a href="/tags/java/" rel="tag"># java</a>
           
         </div>
       
@@ -554,8 +508,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/28/常用工具/" rel="next" title="常用工具">
-                <i class="fa fa-chevron-left"></i> 常用工具
+              <a href="/2017/04/20/hexo的一些小问题/" rel="next" title="hexo的一些小问题">
+                <i class="fa fa-chevron-left"></i> hexo的一些小问题
               </a>
             
           </div>
@@ -563,10 +517,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/04/01/原本两个人/" rel="prev" title="原本两个人">
-                原本两个人 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -621,8 +571,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.png"
@@ -716,6 +675,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#手动启动IOC"><span class="nav-number">1.</span> <span class="nav-text">手动启动IOC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#容器启动过程"><span class="nav-number">2.</span> <span class="nav-text">容器启动过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源加载实现"><span class="nav-number">3.</span> <span class="nav-text">资源加载实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

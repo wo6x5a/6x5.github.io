@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wo6x5a.github.io/"/>
-  <updated>2017-04-26T08:44:27.683Z</updated>
+  <updated>2017-07-04T06:37:02.061Z</updated>
   <id>https://wo6x5a.github.io/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Spring容器启动相关</title>
+    <link href="https://wo6x5a.github.io/2017/07/04/Spring%E5%AE%B9%E5%99%A8%E5%90%AF%E5%8A%A8%E7%9B%B8%E5%85%B3/"/>
+    <id>https://wo6x5a.github.io/2017/07/04/Spring容器启动相关/</id>
+    <published>2017-07-04T06:21:55.000Z</published>
+    <updated>2017-07-04T06:37:02.061Z</updated>
+    
+    <content type="html"><![CDATA[<p>前几天去面试,被问到spring容器的启动,发现是我的盲区,回来赶紧填坑.</p>
+<h2 id="手动启动IOC"><a href="#手动启动IOC" class="headerlink" title="手动启动IOC"></a>手动启动IOC</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ClassPathResource resource = <span class="keyword">new</span> ClassPathResource(<span class="string">"bean.xml"</span>);  </div><div class="line">DefaultListableBeanFactory factory = <span class="keyword">new</span> DefaultListableBeanFactory();  </div><div class="line">XmlBeanDefinitionReader reader = <span class="keyword">new</span> XmlBeanDefinitionReader(factory);  </div><div class="line">reader.loadBeanDefinitions(resource);</div></pre></td></tr></table></figure>
+<p>第一行代码：ClassPathResource的作用是起到了资源定位的作用。通常情况下，spring的配置信息使用文件来描述，通过这样一行代码，指明了需要加载的资源的位置，并且使用Spring能够理解的Resource接口的形式将资源描述出来。<br>第二行代码：DefaultListableBeanFactory是一个纯粹的IoC容器类，它是这个Spring的一个基础的IoC容器类，其他的一个IoC容器都是以这个类为基础进行扩展的。这样代码只是定义了一个IoC容器，它不具有任何其他的能力。<br>第三行代码：XmlBeanDefinitionReader是一个配置文件读取器。它实现了BeanDefinitionReader接口，它能够按照Spring配置文件，将其中的配置信息转换为spring内部可以识别的信息（BeanDefinition）。注意，在这里它的构造函数需要一个BeanDefinitionRegistry类型的参数，BeanDefinitionRegistry接口提供了一个回调函数，通过这个回调函数可以向IoC容器注册bean的定义信息。DefaultListableBeanFactory实现了这个接口。<br>第四行代码：调用loadeBeanDefinitions方法，通过给定的Resource资源，从中读取出spring的配置信息，转换为BeanDefinition，然后再调用BeanDefinitionRegistry的回调函数进行注册。<br>通过以上的四行代码，完成了spring容器的启动。</p>
+<h2 id="容器启动过程"><a href="#容器启动过程" class="headerlink" title="容器启动过程"></a>容器启动过程</h2><ol>
+<li>定位<br>在spring中，使用统一的资源表现方式Resource。根据不同的情况进行不同的选择。上述程序中，采用了编程式的资源定位方法，使用ClassPathResource定位位于classpath下的资源文件。</li>
+<li>加载<br>在加载这个过程中，主要工作是读取spring配置文件，解析配置文件中的内容，将这些信息转换成为Spring内容可以理解、使用的BeanDefinition。</li>
+<li>注册<br>加载过配置文件后，就将BeanDefinition信息注册到BeanDefinitionRegistry中，通常情况下Spring容器的实现类都实现这个接口。</li>
+</ol>
+<h2 id="资源加载实现"><a href="#资源加载实现" class="headerlink" title="资源加载实现"></a>资源加载实现</h2><p>直接上XmlBeanDefinitionReader中的loadBeanDefinitions方法的实现<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">loadBeanDefinitions</span><span class="params">(EncodedResource encodedResource)</span> <span class="keyword">throws</span> BeanDefinitionStoreException </span>&#123;  </div><div class="line">        Assert.notNull(encodedResource, <span class="string">"EncodedResource must not be null"</span>);  </div><div class="line">        <span class="keyword">if</span> (logger.isInfoEnabled()) &#123;  </div><div class="line">            logger.info(<span class="string">"Loading XML bean definitions from "</span> + encodedResource.getResource());  </div><div class="line">        &#125;  </div><div class="line">        Set&lt;EncodedResource&gt; currentResources = <span class="keyword">this</span>.resourcesCurrentlyBeingLoaded.get();  </div><div class="line">        <span class="keyword">if</span> (currentResources == <span class="keyword">null</span>) &#123;  </div><div class="line">            currentResources = <span class="keyword">new</span> HashSet&lt;EncodedResource&gt;(<span class="number">4</span>);  </div><div class="line">            <span class="keyword">this</span>.resourcesCurrentlyBeingLoaded.set(currentResources);  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">if</span> (!currentResources.add(encodedResource)) &#123;  </div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> BeanDefinitionStoreException(  </div><div class="line">                    <span class="string">"Detected cyclic loading of "</span> + encodedResource + <span class="string">" - check your import definitions!"</span>);  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">try</span> &#123;  </div><div class="line">            InputStream inputStream = encodedResource.getResource().getInputStream();  </div><div class="line">            <span class="keyword">try</span> &#123;  </div><div class="line">                InputSource inputSource = <span class="keyword">new</span> InputSource(inputStream);  </div><div class="line">                <span class="keyword">if</span> (encodedResource.getEncoding() != <span class="keyword">null</span>) &#123;  </div><div class="line">                    inputSource.setEncoding(encodedResource.getEncoding());  </div><div class="line">                &#125;  </div><div class="line">                <span class="keyword">return</span> doLoadBeanDefinitions(inputSource, encodedResource.getResource());  </div><div class="line">            &#125;  </div><div class="line">            <span class="keyword">finally</span> &#123;  </div><div class="line">                inputStream.close();  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">catch</span> (IOException ex) &#123;  </div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> BeanDefinitionStoreException(  </div><div class="line">                    <span class="string">"IOException parsing XML document from "</span> + encodedResource.getResource(), ex);  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">finally</span> &#123;  </div><div class="line">            currentResources.remove(encodedResource);  </div><div class="line">            <span class="keyword">if</span> (currentResources.isEmpty()) &#123;  </div><div class="line">                <span class="keyword">this</span>.resourcesCurrentlyBeingLoaded.set(<span class="keyword">null</span>);  </div><div class="line">            &#125;  </div><div class="line">        &#125;  </div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;前几天去面试,被问到spring容器的启动,发现是我的盲区,回来赶紧填坑.&lt;/p&gt;
+&lt;h2 id=&quot;手动启动IOC&quot;&gt;&lt;a href=&quot;#手动启动IOC&quot; class=&quot;headerlink&quot; title=&quot;手动启动IOC&quot;&gt;&lt;/a&gt;手动启动IOC&lt;/h2&gt;&lt;figure 
+    
+    </summary>
+    
+      <category term="技术" scheme="https://wo6x5a.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="spring" scheme="https://wo6x5a.github.io/tags/spring/"/>
+    
+      <category term="java" scheme="https://wo6x5a.github.io/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>hexo的一些小问题</title>
@@ -742,9 +776,9 @@
       <category term="技术" scheme="https://wo6x5a.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="java" scheme="https://wo6x5a.github.io/tags/java/"/>
-    
       <category term="spring" scheme="https://wo6x5a.github.io/tags/spring/"/>
+    
+      <category term="java" scheme="https://wo6x5a.github.io/tags/java/"/>
     
       <category term="事务" scheme="https://wo6x5a.github.io/tags/%E4%BA%8B%E5%8A%A1/"/>
     
